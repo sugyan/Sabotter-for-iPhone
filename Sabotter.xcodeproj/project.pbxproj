@@ -139,38 +139,16 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				9E07664E0F9B5067002B6A4D /* SBAlertView.h */,
-				9E07664F0F9B5067002B6A4D /* SBAlertView.m */,
-				9E8541F20F801C5000C0DD0C /* SBTimelineViewController.h */,
-				9E8541F30F801C5000C0DD0C /* SBTimelineViewController.m */,
-				9E9A9E580F2D10B2007B1318 /* SBCommon.h */,
-				9E81C13F0F2533F6000D150C /* SBConfigViewController.h */,
-				9E81C1400F2533F6000D150C /* SBConfigViewController.m */,
-				9E6723230EF84CA600EB1518 /* SBReplyTimelineNavigationController.h */,
-				9E6723240EF84CA600EB1518 /* SBReplyTimelineNavigationController.m */,
-				9ED1F7720EE8A2850008BFD6 /* SBIconContainer.h */,
-				9ED1F7730EE8A2850008BFD6 /* SBIconContainer.m */,
-				9ED1F7430EE81A8E0008BFD6 /* SBIconRepository.h */,
-				9ED1F7440EE81A8E0008BFD6 /* SBIconRepository.m */,
-				9E7067C40EE5EA3F001F0B18 /* SBStatusCell.h */,
-				9E7067C50EE5EA3F001F0B18 /* SBStatusCell.m */,
+				9EAA24EA1001563100240C29 /* Common */,
+				9EAA24DB100154A900240C29 /* ConfigTab */,
+				9EAA24D5100153BD00240C29 /* MyPostsTab */,
+				9EAA24D41001537200240C29 /* RepliesTab */,
+				9EAA24D31001535B00240C29 /* FriendsTab */,
 				9EDA57860EE4895F000893B7 /* SBTabBarController.h */,
 				9EDA57870EE4895F000893B7 /* SBTabBarController.m */,
-				9EDA578E0EE48F2F000893B7 /* SBFriendsTimelineNavigationController.h */,
-				9EDA578F0EE48F2F000893B7 /* SBFriendsTimelineNavigationController.m */,
 				9EB7398B0EDF4B9F002B44F5 /* SabotterCore */,
-				9EE5449B0F0BC436008DDD97 /* SBPostViewController.h */,
-				9EE5449C0F0BC436008DDD97 /* SBPostViewController.m */,
 				1D3623240D0F684500981E51 /* SabotterAppDelegate.h */,
 				1D3623250D0F684500981E51 /* SabotterAppDelegate.m */,
-				9EBE7EE30EED4FE4006B70D9 /* SBStatusViewController.h */,
-				9EBE7EE40EED4FE4006B70D9 /* SBStatusViewController.m */,
-				9E8542130F80234500C0DD0C /* SBMyTimelineNavigationController.h */,
-				9E8542140F80234500C0DD0C /* SBMyTimelineNavigationController.m */,
-				9EFAC2400FE50F0700106278 /* SBConfigNavigationController.h */,
-				9EFAC2410FE50F0700106278 /* SBConfigNavigationController.m */,
-				9EFAC2430FE51D4100106278 /* SBAboutViewController.h */,
-				9EFAC2440FE51D4100106278 /* SBAboutViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -254,6 +232,68 @@
 				9E7A419B0F486DC200C6CE46 /* SBWassrApiUrl.m */,
 			);
 			name = Wassr;
+			sourceTree = "<group>";
+		};
+		9EAA24D31001535B00240C29 /* FriendsTab */ = {
+			isa = PBXGroup;
+			children = (
+				9EDA578E0EE48F2F000893B7 /* SBFriendsTimelineNavigationController.h */,
+				9EDA578F0EE48F2F000893B7 /* SBFriendsTimelineNavigationController.m */,
+			);
+			path = FriendsTab;
+			sourceTree = "<group>";
+		};
+		9EAA24D41001537200240C29 /* RepliesTab */ = {
+			isa = PBXGroup;
+			children = (
+				9E6723230EF84CA600EB1518 /* SBReplyTimelineNavigationController.h */,
+				9E6723240EF84CA600EB1518 /* SBReplyTimelineNavigationController.m */,
+			);
+			path = RepliesTab;
+			sourceTree = "<group>";
+		};
+		9EAA24D5100153BD00240C29 /* MyPostsTab */ = {
+			isa = PBXGroup;
+			children = (
+				9E8542130F80234500C0DD0C /* SBMyTimelineNavigationController.h */,
+				9E8542140F80234500C0DD0C /* SBMyTimelineNavigationController.m */,
+			);
+			path = MyPostsTab;
+			sourceTree = "<group>";
+		};
+		9EAA24DB100154A900240C29 /* ConfigTab */ = {
+			isa = PBXGroup;
+			children = (
+				9EFAC2400FE50F0700106278 /* SBConfigNavigationController.h */,
+				9EFAC2410FE50F0700106278 /* SBConfigNavigationController.m */,
+				9E81C13F0F2533F6000D150C /* SBConfigViewController.h */,
+				9E81C1400F2533F6000D150C /* SBConfigViewController.m */,
+				9EFAC2430FE51D4100106278 /* SBAboutViewController.h */,
+				9EFAC2440FE51D4100106278 /* SBAboutViewController.m */,
+			);
+			path = ConfigTab;
+			sourceTree = "<group>";
+		};
+		9EAA24EA1001563100240C29 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				9EE5449B0F0BC436008DDD97 /* SBPostViewController.h */,
+				9EE5449C0F0BC436008DDD97 /* SBPostViewController.m */,
+				9EBE7EE30EED4FE4006B70D9 /* SBStatusViewController.h */,
+				9EBE7EE40EED4FE4006B70D9 /* SBStatusViewController.m */,
+				9E07664E0F9B5067002B6A4D /* SBAlertView.h */,
+				9E07664F0F9B5067002B6A4D /* SBAlertView.m */,
+				9E8541F20F801C5000C0DD0C /* SBTimelineViewController.h */,
+				9E8541F30F801C5000C0DD0C /* SBTimelineViewController.m */,
+				9E9A9E580F2D10B2007B1318 /* SBCommon.h */,
+				9ED1F7720EE8A2850008BFD6 /* SBIconContainer.h */,
+				9ED1F7730EE8A2850008BFD6 /* SBIconContainer.m */,
+				9ED1F7430EE81A8E0008BFD6 /* SBIconRepository.h */,
+				9ED1F7440EE81A8E0008BFD6 /* SBIconRepository.m */,
+				9E7067C40EE5EA3F001F0B18 /* SBStatusCell.h */,
+				9E7067C50EE5EA3F001F0B18 /* SBStatusCell.m */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		9EB7398B0EDF4B9F002B44F5 /* SabotterCore */ = {
@@ -437,10 +477,10 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 2.2.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C1BA120B-5883-4936-8C93-29FA934E5B64";
-				SDKROOT = iphoneos2.2;
+				SDKROOT = iphoneos3.0;
 			};
 			name = Distribution;
 		};
@@ -468,9 +508,10 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos2.2;
+				SDKROOT = iphoneos3.0;
 			};
 			name = Debug;
 		};
@@ -482,8 +523,9 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				PREBINDING = NO;
-				SDKROOT = iphoneos2.2;
+				SDKROOT = iphoneos3.0;
 			};
 			name = Release;
 		};

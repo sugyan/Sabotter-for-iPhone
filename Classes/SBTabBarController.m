@@ -27,7 +27,7 @@
         [replyNaviCon setTitle:NSLocalizedString(@"Replies", nil)];
         SBMyTimelineNavigationController *myNaviCon = [[[SBMyTimelineNavigationController alloc] init] autorelease];
         [[myNaviCon navigationBar] setBarStyle:UIBarStyleBlackOpaque];
-        [myNaviCon setTitle:NSLocalizedString(@"Sents", nil)];
+        [myNaviCon setTitle:NSLocalizedString(@"MyPosts", nil)];
         SBConfigNavigationController *configNaviCon = [[[SBConfigNavigationController alloc] init] autorelease];
         [[configNaviCon navigationBar] setBarStyle:UIBarStyleBlackOpaque];
         NSArray *tabArray = [NSArray
