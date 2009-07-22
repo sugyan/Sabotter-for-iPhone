@@ -181,23 +181,23 @@
         }
         if ([indexPath row] == 0) {
             if ([status favorited]) {
-                [cell setImage:[UIImage imageNamed:@"star_full.gif"]];
+                [[cell imageView] setImage:[UIImage imageNamed:@"star_full.gif"]];
                 if ([status service] == SERVICE_WASSR) {
-                    [cell setText:NSLocalizedString(@"Remove IINE", nil)];
+                    [[cell textLabel] setText:NSLocalizedString(@"Remove IINE", nil)];
                 } else {
-                    [cell setText:NSLocalizedString(@"Remove Favorited", nil)];
+                    [[cell textLabel] setText:NSLocalizedString(@"Remove Favorited", nil)];
                 }
             } else {
-                [cell setImage:[UIImage imageNamed:@"star_empty.gif"]];
+                [[cell imageView] setImage:[UIImage imageNamed:@"star_empty.gif"]];
                 if ([status service] == SERVICE_WASSR) {
-                    [cell setText:NSLocalizedString(@"Make IINE", nil)];
+                    [[cell textLabel] setText:NSLocalizedString(@"Make IINE", nil)];
                 } else {
-                    [cell setText:NSLocalizedString(@"Make Favorited", nil)];
+                    [[cell textLabel] setText:NSLocalizedString(@"Make Favorited", nil)];
                 }
             }                
         } else {
             [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
-            [cell setText:[actions objectAtIndex:[indexPath row]]];
+            [[cell textLabel] setText:[actions objectAtIndex:[indexPath row]]];
         }
         break;
     }        

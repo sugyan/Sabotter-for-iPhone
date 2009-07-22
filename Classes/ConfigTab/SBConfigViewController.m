@@ -138,7 +138,7 @@
     if ([indexPath section] < 2) {
         switch ([indexPath row]) {
         case 0: {
-            [cell setText:NSLocalizedString(@"Enabled", nil)];
+            [[cell textLabel] setText:NSLocalizedString(@"Enabled", nil)];
             switch ([indexPath section]) {
             case 0:
                 [cell addSubview:t_switch];
@@ -152,7 +152,7 @@
             break;
         }
         case 1: {
-            [cell setText:NSLocalizedString(@"Username", nil)];
+            [[cell textLabel] setText:NSLocalizedString(@"Username", nil)];
             switch ([indexPath section]) {
             case 0:
                 [cell addSubview:t_usernameField];
@@ -166,7 +166,7 @@
             break;
         }
         case 2: {
-            [cell setText:NSLocalizedString(@"Password", nil)];
+            [[cell textLabel] setText:NSLocalizedString(@"Password", nil)];
             switch ([indexPath section]) {
             case 0:
                 [cell addSubview:t_passwordField];
@@ -183,7 +183,7 @@
             break;
         }
     } else {
-        [cell setText:@"About Sabotter for iPhone"];
+        [[cell textLabel] setText:@"About Sabotter for iPhone"];
         [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     }
     
