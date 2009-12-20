@@ -1,14 +1,20 @@
 #import <UIKit/UIKit.h>
 
-#import "SBTabBarController.h"
-#import "SBPostViewController.h"
+/* #import "SBTabBarController.h" */
+/* #import "SBPostViewController.h" */
+#import "SBNavigationController.h"
 
 
-@interface SabotterAppDelegate : NSObject <UIApplicationDelegate, SBPostViewControllerDelegate> {
-    UIWindow *window;
-    SBTabBarController *tabBarController;
+/* @interface SabotterAppDelegate : NSObject <UIApplicationDelegate, SBPostViewControllerDelegate> { */
+@interface SabotterAppDelegate : NSObject <UIApplicationDelegate> {
+    IBOutlet UIWindow *window;
+    IBOutlet UITabBarController *tabBarController;
 
-    int httpConnectionNum;
+    IBOutlet SBNavigationController *friendsNavigationController;
+    IBOutlet SBNavigationController *repliesNavigationController;
+/*     SBTabBarController *tabBarController; */
+
+/*     int httpConnectionNum; */
 }
 
 @end
