@@ -19,7 +19,9 @@
 		9E07666A0F9B6C2B002B6A4D /* arrow_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E0766670F9B6C2B002B6A4D /* arrow_right.png */; };
 		9E07666B0F9B6C2B002B6A4D /* comment.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E0766680F9B6C2B002B6A4D /* comment.png */; };
 		9E07666D0F9B6C35002B6A4D /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E07666C0F9B6C35002B6A4D /* user.png */; };
-		9E5277AF10DD47CA00266F02 /* SBNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5277AE10DD47CA00266F02 /* SBNavigationController.m */; };
+		9E5277DF10DE772700266F02 /* SBNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5277DD10DE772700266F02 /* SBNavigationController.m */; };
+		9E5277E510DE77EF00266F02 /* SBConfigTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5277E310DE77EF00266F02 /* SBConfigTableViewController.m */; };
+		9E52781E10DE7AF900266F02 /* SBConfigTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E52781D10DE7AF900266F02 /* SBConfigTableViewController.xib */; };
 		9E653AC50FA5F9C70065AF2A /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9E653AC40FA5F9C70065AF2A /* Entitlements.plist */; };
 		9E67232F0EF84DAD00EB1518 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9E67232E0EF84DAD00EB1518 /* Settings.bundle */; };
 		9EE016C010DCBE2200484603 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EE016BF10DCBE2200484603 /* MainWindow.xib */; };
@@ -48,8 +50,11 @@
 		9E0766680F9B6C2B002B6A4D /* comment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = comment.png; path = Resources/comment.png; sourceTree = "<group>"; };
 		9E07666C0F9B6C35002B6A4D /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = user.png; path = Resources/user.png; sourceTree = "<group>"; };
 		9E2EA1AA0F0BB5D800B27B9F /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
-		9E5277AD10DD47CA00266F02 /* SBNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBNavigationController.h; sourceTree = "<group>"; };
-		9E5277AE10DD47CA00266F02 /* SBNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBNavigationController.m; sourceTree = "<group>"; };
+		9E5277DD10DE772700266F02 /* SBNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBNavigationController.m; sourceTree = "<group>"; };
+		9E5277DE10DE772700266F02 /* SBNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBNavigationController.h; sourceTree = "<group>"; };
+		9E5277E210DE77EF00266F02 /* SBConfigTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBConfigTableViewController.h; sourceTree = "<group>"; };
+		9E5277E310DE77EF00266F02 /* SBConfigTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBConfigTableViewController.m; sourceTree = "<group>"; };
+		9E52781D10DE7AF900266F02 /* SBConfigTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SBConfigTableViewController.xib; path = XIB/SBConfigTableViewController.xib; sourceTree = "<group>"; };
 		9E653AC40FA5F9C70065AF2A /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		9E67232E0EF84DAD00EB1518 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		9EE016BF10DCBE2200484603 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = XIB/MainWindow.xib; sourceTree = "<group>"; };
@@ -78,12 +83,14 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				9E5277E210DE77EF00266F02 /* SBConfigTableViewController.h */,
+				9E5277E310DE77EF00266F02 /* SBConfigTableViewController.m */,
+				9E5277DD10DE772700266F02 /* SBNavigationController.m */,
+				9E5277DE10DE772700266F02 /* SBNavigationController.h */,
 				9EE017F710DD440100484603 /* SBTimelineViewController.h */,
 				9EE017F810DD440100484603 /* SBTimelineViewController.m */,
 				1D3623240D0F684500981E51 /* SabotterAppDelegate.h */,
 				1D3623250D0F684500981E51 /* SabotterAppDelegate.m */,
-				9E5277AD10DD47CA00266F02 /* SBNavigationController.h */,
-				9E5277AE10DD47CA00266F02 /* SBNavigationController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -151,6 +158,7 @@
 		9EE016B110DCBC9700484603 /* XIB */ = {
 			isa = PBXGroup;
 			children = (
+				9E52781D10DE7AF900266F02 /* SBConfigTableViewController.xib */,
 				9EE0180410DD44C600484603 /* SBTimelineViewController.xib */,
 				9EE016BF10DCBE2200484603 /* MainWindow.xib */,
 			);
@@ -213,6 +221,7 @@
 				9EFAC2480FE5215800106278 /* about.html in Resources */,
 				9EE016C010DCBE2200484603 /* MainWindow.xib in Resources */,
 				9EE0180510DD44C600484603 /* SBTimelineViewController.xib in Resources */,
+				9E52781E10DE7AF900266F02 /* SBConfigTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,7 +235,8 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* SabotterAppDelegate.m in Sources */,
 				9EE017FA10DD440100484603 /* SBTimelineViewController.m in Sources */,
-				9E5277AF10DD47CA00266F02 /* SBNavigationController.m in Sources */,
+				9E5277DF10DE772700266F02 /* SBNavigationController.m in Sources */,
+				9E5277E510DE77EF00266F02 /* SBConfigTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
