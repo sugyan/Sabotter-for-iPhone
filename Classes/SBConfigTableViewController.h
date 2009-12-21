@@ -9,7 +9,12 @@
 
 
 @interface SBConfigTableViewController : UITableViewController {
-
+    IBOutlet UITextField *twitterUsernameField;
+    IBOutlet UITextField *twitterPasswordField;
+    IBOutlet UITextField *wassrUsernameField;
+    IBOutlet UITextField *wassrPasswordField;
 }
+
+- (IBAction)editingTextFieldDone:(id)sender;
 
 @end

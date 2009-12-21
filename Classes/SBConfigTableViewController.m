@@ -81,10 +81,10 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     switch (section) {
     case 0:
-        return 2;
+        return 3;
         break;
     case 1:
-        return 2;
+        return 3;
         break;
     case 2:
         return 1;
@@ -104,9 +104,56 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    } else {
+        return cell;
     }
 
     // Set up the cell...
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    NSUInteger section = [indexPath section];
+    if (section == 0 || section == 1) {
+        CGRect cellFrame = [cell frame];
+        CGRect textFieldFrame = CGRectMake(
+            cellFrame.origin.x + 120.0,
+            cellFrame.origin.y,
+            cellFrame.size.width - 130.0,
+            cellFrame.size.height);
+        switch ([indexPath row]) {
+        case 0:
+            [[cell textLabel] setText:NSLocalizedString(@"Enabled", nil)];
+            break;
+        case 1:
+            [[cell textLabel] setText:NSLocalizedString(@"Username", nil)];
+            switch (section) {
+            case 0:
+                [twitterUsernameField setFrame:textFieldFrame];
+                [cell addSubview:twitterUsernameField];
+                break;
+            case 1:
+                [wassrUsernameField setFrame:textFieldFrame];
+                [cell addSubview:wassrUsernameField];
+                break;
+            default:
+                break;
+            }
+            break;
+        case 2:
+            [[cell textLabel] setText:NSLocalizedString(@"Password", nil)];
+            switch (section) {
+            case 0:
+                [twitterPasswordField setFrame:textFieldFrame];
+                [cell addSubview:twitterPasswordField];
+                break;
+            case 1:
+                [wassrPasswordField setFrame:textFieldFrame];
+                [cell addSubview:wassrPasswordField];
+                break;
+            default:
+                break;
+            }
+            break;
+        }
+    }
 	
     return cell;
 }
@@ -162,6 +209,11 @@
 
 - (void)dealloc {
     [super dealloc];
+}
+
+
+- (IBAction)editingTextFieldDone:(id)sender {
+    //NO-OP
 }
 
 
