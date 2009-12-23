@@ -119,9 +119,27 @@
             cellFrame.size.width - 130.0,
             cellFrame.size.height);
         switch ([indexPath row]) {
-        case 0:
+        case 0: {
+            CGRect switchFrame = CGRectMake(
+                cellFrame.origin.x + 120.0,
+                cellFrame.origin.y + 9.0,
+                0.0,
+                0.0);
             [[cell textLabel] setText:NSLocalizedString(@"Enabled", nil)];
+            switch (section) {
+            case 0:
+                [twitterEnabledSwitch setFrame:switchFrame];
+                [cell addSubview:twitterEnabledSwitch];
+                break;
+            case 1:
+                [wassrEnabledSwitch setFrame:switchFrame];
+                [cell addSubview:wassrEnabledSwitch];
+                break;
+            default:
+                break;
+            }
             break;
+        }
         case 1:
             [[cell textLabel] setText:NSLocalizedString(@"Username", nil)];
             switch (section) {
@@ -213,7 +231,35 @@
 
 
 - (IBAction)editingTextFieldDone:(id)sender {
-    //NO-OP
+    if (!sender) {
+    } else if ([sender isEqual:twitterUsernameField]) {
+        [twitterPasswordField becomeFirstResponder];
+    } else if ([sender isEqual:twitterPasswordField]) {
+        if ([wassrEnabledSwitch isOn]) {
+            [wassrUsernameField becomeFirstResponder];
+        } else {
+            [twitterUsernameField becomeFirstResponder];
+        }
+    } else if ([sender isEqual:wassrUsernameField]) {
+        [wassrPasswordField becomeFirstResponder];
+    } else if ([sender isEqual:wassrPasswordField]) {
+        if ([twitterEnabledSwitch isOn]) {
+            [twitterUsernameField becomeFirstResponder];
+        } else {
+            [wassrUsernameField becomeFirstResponder];
+        }
+    }
+}
+
+- (IBAction)switchChanged:(id)sender {
+    BOOL isOn = [(UISwitch *)sender isOn];
+    if ([sender isEqual:twitterEnabledSwitch]) {
+        [twitterUsernameField setEnabled:isOn];
+        [twitterPasswordField setEnabled:isOn];
+    } else {
+        [wassrUsernameField setEnabled:isOn];
+        [wassrPasswordField setEnabled:isOn];
+    }
 }
 
 
