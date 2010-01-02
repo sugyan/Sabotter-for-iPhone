@@ -1,3 +1,4 @@
+
 #import <UIKit/UIKit.h>
 
 /* #import "SBTabBarController.h" */
@@ -12,10 +13,13 @@
 
     IBOutlet SBNavigationController *friendsNavigationController;
     IBOutlet SBNavigationController *repliesNavigationController;
+    IBOutlet UINavigationController *configNavigationController;
 /*     SBTabBarController *tabBarController; */
 
 /*     int httpConnectionNum; */
 }
+
+- (IBAction)onPushConfigButton:(id)sender;
 
 @end
 

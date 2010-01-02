@@ -1,4 +1,5 @@
 #import "SabotterAppDelegate.h"
+#import "SBConfigTableViewController.h"
 // #import "SBCommon.h"
 // #import "SBHttpClient.h"
 // #import "SBTwitterApiUrl.h"
@@ -132,6 +133,11 @@
 //     [tabBarController release];
 //     [window release];
     [super dealloc];
+}
+
+
+- (IBAction)onPushConfigButton:(id)sender {
+    [tabBarController presentModalViewController:configNavigationController animated:YES];
 }
 
 

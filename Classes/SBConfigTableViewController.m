@@ -73,25 +73,16 @@
 #pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return 2;
 }
 
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    switch (section) {
-    case 0:
-        return 3;
-        break;
-    case 1:
-        return 3;
-        break;
-    case 2:
+    if (section == 0) {
+        return 2;
+    } else {
         return 1;
-        break;
-    default:
-        return 0;
-        break;
     }
 }
 
@@ -103,74 +94,34 @@
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        UITableViewCellStyle style = UITableViewCellStyleDefault;
+        if ([indexPath section] == 0) {
+            style = UITableViewCellStyleValue2;
+        }
+        NSLog(@"%d", style);
+        cell = [[[UITableViewCell alloc] initWithStyle:style reuseIdentifier:CellIdentifier] autorelease];
     } else {
         return cell;
     }
-
     // Set up the cell...
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     NSUInteger section = [indexPath section];
-    if (section == 0 || section == 1) {
-        CGRect cellFrame = [cell frame];
-        CGRect textFieldFrame = CGRectMake(
-            cellFrame.origin.x + 120.0,
-            cellFrame.origin.y,
-            cellFrame.size.width - 130.0,
-            cellFrame.size.height);
+    if (section == 0) {
+        [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
         switch ([indexPath row]) {
-        case 0: {
-            CGRect switchFrame = CGRectMake(
-                cellFrame.origin.x + 120.0,
-                cellFrame.origin.y + 9.0,
-                0.0,
-                0.0);
-            [[cell textLabel] setText:NSLocalizedString(@"Enabled", nil)];
-            switch (section) {
-            case 0:
-                [twitterEnabledSwitch setFrame:switchFrame];
-                [cell addSubview:twitterEnabledSwitch];
-                break;
-            case 1:
-                [wassrEnabledSwitch setFrame:switchFrame];
-                [cell addSubview:wassrEnabledSwitch];
-                break;
-            default:
-                break;
-            }
+        case 0:
+            [[cell textLabel] setText:@"Twitter"];
+            [[cell detailTextLabel] setText:@"dummy"];
             break;
-        }
         case 1:
-            [[cell textLabel] setText:NSLocalizedString(@"Username", nil)];
-            switch (section) {
-            case 0:
-                [twitterUsernameField setFrame:textFieldFrame];
-                [cell addSubview:twitterUsernameField];
-                break;
-            case 1:
-                [wassrUsernameField setFrame:textFieldFrame];
-                [cell addSubview:wassrUsernameField];
-                break;
-            default:
-                break;
-            }
+            [[cell textLabel] setText:@"Wassr"];
+            [[cell detailTextLabel] setText:@"dummy"];
             break;
-        case 2:
-            [[cell textLabel] setText:NSLocalizedString(@"Password", nil)];
-            switch (section) {
-            case 0:
-                [twitterPasswordField setFrame:textFieldFrame];
-                [cell addSubview:twitterPasswordField];
-                break;
-            case 1:
-                [wassrPasswordField setFrame:textFieldFrame];
-                [cell addSubview:wassrPasswordField];
-                break;
-            default:
-                break;
-            }
+        default:
             break;
         }
+    } else {
+        [[cell textLabel] setText:NSLocalizedString(@"About Sabotter", nil)];
     }
 	
     return cell;
@@ -230,36 +181,8 @@
 }
 
 
-- (IBAction)editingTextFieldDone:(id)sender {
-    if (!sender) {
-    } else if ([sender isEqual:twitterUsernameField]) {
-        [twitterPasswordField becomeFirstResponder];
-    } else if ([sender isEqual:twitterPasswordField]) {
-        if ([wassrEnabledSwitch isOn]) {
-            [wassrUsernameField becomeFirstResponder];
-        } else {
-            [twitterUsernameField becomeFirstResponder];
-        }
-    } else if ([sender isEqual:wassrUsernameField]) {
-        [wassrPasswordField becomeFirstResponder];
-    } else if ([sender isEqual:wassrPasswordField]) {
-        if ([twitterEnabledSwitch isOn]) {
-            [twitterUsernameField becomeFirstResponder];
-        } else {
-            [wassrUsernameField becomeFirstResponder];
-        }
-    }
-}
-
-- (IBAction)switchChanged:(id)sender {
-    BOOL isOn = [(UISwitch *)sender isOn];
-    if ([sender isEqual:twitterEnabledSwitch]) {
-        [twitterUsernameField setEnabled:isOn];
-        [twitterPasswordField setEnabled:isOn];
-    } else {
-        [wassrUsernameField setEnabled:isOn];
-        [wassrPasswordField setEnabled:isOn];
-    }
+- (IBAction)onPushDoneButton:(id)sender {
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 
@@ -267,18 +190,17 @@
 // UITableViewDelegate method
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    switch (section) {
-    case 0:
-        return NSLocalizedString(@"Twitter account", nil);
-        break;
-    case 1:
-        return NSLocalizedString(@"Wassr account", nil);
-        break;
-    default:
+    if (section == 0) {
+        return NSLocalizedString(@"Account", nil);
+    } else {
         return nil;
-        break;
     }
 }
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"tableView:accessoryButtonTappedForRowWithIndexPath:");
+}
+
 
 @end
 
