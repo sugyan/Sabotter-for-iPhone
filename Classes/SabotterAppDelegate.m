@@ -137,7 +137,7 @@
 
 
 - (IBAction)onPushConfigButton:(id)sender {
-    [tabBarController presentModalViewController:configNavigationController animated:YES];
+    [tabBarController presentModalViewController:configNavigationController animated:NO];
 }
 
 

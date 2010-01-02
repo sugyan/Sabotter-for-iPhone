@@ -6,6 +6,7 @@
 //
 
 #import "SBConfigTableViewController.h"
+#import "SBConfigAccountViewController.h"
 
 
 @implementation SBConfigTableViewController
@@ -182,7 +183,7 @@
 
 
 - (IBAction)onPushDoneButton:(id)sender {
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissModalViewControllerAnimated:NO];
 }
 
 
@@ -198,7 +199,11 @@
 }
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"tableView:accessoryButtonTappedForRowWithIndexPath:");
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+
+    SBConfigAccountViewController *accountViewController = [[[SBConfigAccountViewController alloc] init] autorelease];
+    [accountViewController setTitle:[[cell textLabel] text]];
+    [self presentModalViewController:accountViewController animated:YES];
 }
 
 
