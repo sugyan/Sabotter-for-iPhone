@@ -17,6 +17,7 @@ typedef enum {
 @interface SBConfigAccountViewController : UIViewController {
     ConfigAccountService service;
     IBOutlet UILabel *titleLabel;
+    IBOutlet UISwitch *enableSwitch;
     IBOutlet UITextField *usernameField;
     IBOutlet UITextField *passwordField;
 }
@@ -25,5 +26,6 @@ typedef enum {
 - (IBAction)onPushCancelButton:(id)sender;
 - (IBAction)onPushSaveButton:(id)sender;
 - (IBAction)onEndEditingTextField:(id)sender;
+- (IBAction)onChangeSwitch:(id)sender;
 
 @end

@@ -7,6 +7,7 @@
 
 #import "SBConfigTableViewController.h"
 #import "SBConfigAccountViewController.h"
+#import "SBCommon.h"
 
 
 @implementation SBConfigTableViewController
@@ -29,11 +30,11 @@
 }
 */
 
-/*
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [[self tableView] reloadData];
 }
-*/
+
 /*
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -101,10 +102,11 @@
         }
         NSLog(@"%d", style);
         cell = [[[UITableViewCell alloc] initWithStyle:style reuseIdentifier:CellIdentifier] autorelease];
-    } else {
-        return cell;
     }
+
     // Set up the cell...
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     NSUInteger section = [indexPath section];
     if (section == 0) {
@@ -112,11 +114,15 @@
         switch ([indexPath row]) {
         case 0:
             [[cell textLabel] setText:@"Twitter"];
-            [[cell detailTextLabel] setText:@"dummy"];
+            if ([defaults boolForKey:USERDEFAULTS_TWITTER_ENABLE]) {
+                [[cell detailTextLabel] setText:[defaults stringForKey:USERDEFAULTS_TWITTER_USERNAME]];
+            }
             break;
         case 1:
             [[cell textLabel] setText:@"Wassr"];
-            [[cell detailTextLabel] setText:@"dummy"];
+            if ([defaults boolForKey:USERDEFAULTS_WASSR_ENABLE]) {
+                [[cell detailTextLabel] setText:[defaults stringForKey:USERDEFAULTS_WASSR_USERNAME]];
+            }
             break;
         default:
             break;

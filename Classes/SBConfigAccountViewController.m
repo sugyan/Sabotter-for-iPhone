@@ -39,13 +39,15 @@
     switch (service) {
     case SERVICE_TWITTER:
         [titleLabel setText:@"Twitter"];
-        [usernameField setText:[defaults objectForKey:USERDEFAULTS_TWITTER_USERNAME]];
-        [passwordField setText:[defaults objectForKey:USERDEFAULTS_TWITTER_PASSWORD]];
+        [enableSwitch setOn:[defaults boolForKey:USERDEFAULTS_TWITTER_ENABLE]];
+        [usernameField setText:[defaults stringForKey:USERDEFAULTS_TWITTER_USERNAME]];
+        [passwordField setText:[defaults stringForKey:USERDEFAULTS_TWITTER_PASSWORD]];
         break;
     case SERVICE_WASSR:
         [titleLabel setText:@"Wassr"];
-        [usernameField setText:[defaults objectForKey:USERDEFAULTS_WASSR_USERNAME]];
-        [passwordField setText:[defaults objectForKey:USERDEFAULTS_WASSR_PASSWORD]];
+        [enableSwitch setOn:[defaults boolForKey:USERDEFAULTS_WASSR_ENABLE]];
+        [usernameField setText:[defaults stringForKey:USERDEFAULTS_WASSR_USERNAME]];
+        [passwordField setText:[defaults stringForKey:USERDEFAULTS_WASSR_PASSWORD]];
         break;
     default:
         break;
@@ -83,19 +85,32 @@
 }
 
 - (IBAction)onPushSaveButton:(id)sender {
-    //TODO アカウント認証
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     switch (service) {
     case SERVICE_TWITTER:
-        [defaults setObject:[usernameField text] forKey:USERDEFAULTS_TWITTER_USERNAME];
-        [defaults setObject:[passwordField text] forKey:USERDEFAULTS_TWITTER_PASSWORD];
+        [defaults setBool:[enableSwitch isOn] forKey:USERDEFAULTS_TWITTER_ENABLE];
         break;
     case SERVICE_WASSR:
-        [defaults setObject:[usernameField text] forKey:USERDEFAULTS_WASSR_USERNAME];
-        [defaults setObject:[passwordField text] forKey:USERDEFAULTS_WASSR_PASSWORD];
+        [defaults setBool:[enableSwitch isOn] forKey:USERDEFAULTS_WASSR_ENABLE];
         break;
-    default:
+    defalt:
         break;
+    }
+    
+    if ([enableSwitch isOn]) {
+        //TODO アカウント認証
+        switch (service) {
+        case SERVICE_TWITTER:
+            [defaults setObject:[usernameField text] forKey:USERDEFAULTS_TWITTER_USERNAME];
+            [defaults setObject:[passwordField text] forKey:USERDEFAULTS_TWITTER_PASSWORD];
+            break;
+        case SERVICE_WASSR:
+            [defaults setObject:[usernameField text] forKey:USERDEFAULTS_WASSR_USERNAME];
+            [defaults setObject:[passwordField text] forKey:USERDEFAULTS_WASSR_PASSWORD];
+            break;
+        default:
+            break;
+        }
     }
 
     [self dismissModalViewControllerAnimated:YES];
@@ -108,6 +123,11 @@
     if ([sender isEqual:passwordField]) {
         [usernameField becomeFirstResponder];
     }
+}
+
+- (IBAction)onChangeSwitch:(id)sender {
+    [usernameField setEnabled:[enableSwitch isOn]];
+    [passwordField setEnabled:[enableSwitch isOn]];
 }
 
 
