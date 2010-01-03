@@ -55,6 +55,7 @@
 		9E5277E310DE77EF00266F02 /* SBConfigTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBConfigTableViewController.m; sourceTree = "<group>"; };
 		9E653AC40FA5F9C70065AF2A /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		9E67232E0EF84DAD00EB1518 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		9E82A34110F1565F005C164A /* SBCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBCommon.h; path = Common/SBCommon.h; sourceTree = "<group>"; };
 		9ED604D510EF586500AAEB63 /* SBConfigAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBConfigAccountViewController.h; sourceTree = "<group>"; };
 		9ED604D610EF586500AAEB63 /* SBConfigAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBConfigAccountViewController.m; sourceTree = "<group>"; };
 		9ED604DB10EF58A300AAEB63 /* SBConfigAccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SBConfigAccountViewController.xib; path = XIB/SBConfigAccountViewController.xib; sourceTree = "<group>"; };
@@ -84,6 +85,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				9E82A34010F15649005C164A /* Common */,
 				9E5277E210DE77EF00266F02 /* SBConfigTableViewController.h */,
 				9E5277E310DE77EF00266F02 /* SBConfigTableViewController.m */,
 				9E5277DD10DE772700266F02 /* SBNavigationController.m */,
@@ -155,6 +157,14 @@
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9E82A34010F15649005C164A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				9E82A34110F1565F005C164A /* SBCommon.h */,
+			);
+			name = Common;
 			sourceTree = "<group>";
 		};
 		9EE016B110DCBC9700484603 /* XIB */ = {

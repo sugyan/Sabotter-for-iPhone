@@ -6,6 +6,7 @@
 //
 
 #import "SBConfigAccountViewController.h"
+#import "SBCommon.h"
 
 
 @implementation SBConfigAccountViewController
@@ -20,13 +21,35 @@
 }
 */
 
+- (id)initWithService:(ConfigAccountService)configAccountService {
+    if (self = [super init]) {
+        service = configAccountService;
+    }
+
+    return self;
+}
+
 /*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 */
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [titleLabel setText:[self title]];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    switch (service) {
+    case SERVICE_TWITTER:
+        [titleLabel setText:@"Twitter"];
+        [usernameField setText:[defaults objectForKey:USERDEFAULTS_TWITTER_USERNAME]];
+        [passwordField setText:[defaults objectForKey:USERDEFAULTS_TWITTER_PASSWORD]];
+        break;
+    case SERVICE_WASSR:
+        [titleLabel setText:@"Wassr"];
+        [usernameField setText:[defaults objectForKey:USERDEFAULTS_WASSR_USERNAME]];
+        [passwordField setText:[defaults objectForKey:USERDEFAULTS_WASSR_PASSWORD]];
+        break;
+    default:
+        break;
+    }
 }
 
 /*
@@ -60,7 +83,31 @@
 }
 
 - (IBAction)onPushSaveButton:(id)sender {
-    NSLog(@"onPushSaveButton:");
+    //TODO アカウント認証
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    switch (service) {
+    case SERVICE_TWITTER:
+        [defaults setObject:[usernameField text] forKey:USERDEFAULTS_TWITTER_USERNAME];
+        [defaults setObject:[passwordField text] forKey:USERDEFAULTS_TWITTER_PASSWORD];
+        break;
+    case SERVICE_WASSR:
+        [defaults setObject:[usernameField text] forKey:USERDEFAULTS_WASSR_USERNAME];
+        [defaults setObject:[passwordField text] forKey:USERDEFAULTS_WASSR_PASSWORD];
+        break;
+    default:
+        break;
+    }
+
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+- (IBAction)onEndEditingTextField:(id)sender {
+    if ([sender isEqual:usernameField]) {
+        [passwordField becomeFirstResponder];
+    }
+    if ([sender isEqual:passwordField]) {
+        [usernameField becomeFirstResponder];
+    }
 }
 
 

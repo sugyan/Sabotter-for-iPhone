@@ -199,10 +199,18 @@
 }
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-
-    SBConfigAccountViewController *accountViewController = [[[SBConfigAccountViewController alloc] init] autorelease];
-    [accountViewController setTitle:[[cell textLabel] text]];
+    ConfigAccountService service;
+    switch ([indexPath row]) {
+    case 0:
+        service = SERVICE_TWITTER;
+        break;
+    case 1:
+        service = SERVICE_WASSR;
+        break;
+    default:
+        break;
+    }
+    SBConfigAccountViewController *accountViewController = [[[SBConfigAccountViewController alloc] initWithService:service] autorelease];
     [self presentModalViewController:accountViewController animated:YES];
 }
 

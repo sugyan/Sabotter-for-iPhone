@@ -8,13 +8,22 @@
 #import <UIKit/UIKit.h>
 
 
+typedef enum {
+    SERVICE_TWITTER,
+    SERVICE_WASSR,
+} ConfigAccountService;
+
+
 @interface SBConfigAccountViewController : UIViewController {
+    ConfigAccountService service;
     IBOutlet UILabel *titleLabel;
     IBOutlet UITextField *usernameField;
     IBOutlet UITextField *passwordField;
 }
 
+- (id)initWithService:(ConfigAccountService)configAccountService;
 - (IBAction)onPushCancelButton:(id)sender;
 - (IBAction)onPushSaveButton:(id)sender;
+- (IBAction)onEndEditingTextField:(id)sender;
 
 @end
