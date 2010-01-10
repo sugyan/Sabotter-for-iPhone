@@ -115,13 +115,21 @@
         case 0:
             [[cell textLabel] setText:@"Twitter"];
             if ([defaults boolForKey:USERDEFAULTS_TWITTER_ENABLE]) {
+                [[cell detailTextLabel] setTextColor:[UIColor blackColor]];
                 [[cell detailTextLabel] setText:[defaults stringForKey:USERDEFAULTS_TWITTER_USERNAME]];
+            } else {
+                [[cell detailTextLabel] setTextColor:[UIColor grayColor]];
+                [[cell detailTextLabel] setText:NSLocalizedString(@"NOT USE", nil)];
             }
             break;
         case 1:
             [[cell textLabel] setText:@"Wassr"];
             if ([defaults boolForKey:USERDEFAULTS_WASSR_ENABLE]) {
+                [[cell detailTextLabel] setTextColor:[UIColor blackColor]];
                 [[cell detailTextLabel] setText:[defaults stringForKey:USERDEFAULTS_WASSR_USERNAME]];
+            } else {
+                [[cell detailTextLabel] setTextColor:[UIColor grayColor]];
+                [[cell detailTextLabel] setText:NSLocalizedString(@"NOT USE", nil)];
             }
             break;
         default:
