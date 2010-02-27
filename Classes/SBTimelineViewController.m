@@ -81,7 +81,7 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [array count];
+    return [array count] + 1;
 }
 
 
@@ -96,7 +96,12 @@
     }
     
     // Set up the cell...
-    NSString *string = [array objectAtIndex:[indexPath row]];
+    NSString *string;
+    if ([indexPath row] == 0) {
+        string = @"";
+    } else {
+        string = [array objectAtIndex:[indexPath row] - 1];
+    }
     [[cell textLabel] setText:string];
 	
     return cell;
