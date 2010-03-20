@@ -119,7 +119,7 @@
                 [[cell detailTextLabel] setText:[defaults stringForKey:USERDEFAULTS_TWITTER_USERNAME]];
             } else {
                 [[cell detailTextLabel] setTextColor:[UIColor grayColor]];
-                [[cell detailTextLabel] setText:NSLocalizedString(@"NOT USE", nil)];
+                [[cell detailTextLabel] setText:NSLocalizedString(@"DISABLED", nil)];
             }
             break;
         case 1:
@@ -129,7 +129,7 @@
                 [[cell detailTextLabel] setText:[defaults stringForKey:USERDEFAULTS_WASSR_USERNAME]];
             } else {
                 [[cell detailTextLabel] setTextColor:[UIColor grayColor]];
-                [[cell detailTextLabel] setText:NSLocalizedString(@"NOT USE", nil)];
+                [[cell detailTextLabel] setText:NSLocalizedString(@"DISABLED", nil)];
             }
             break;
         default:
