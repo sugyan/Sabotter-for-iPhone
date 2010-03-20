@@ -40,7 +40,6 @@
 //           || ([defaults stringForKey:USERDEFAULTS_WASSR_USERNAME] && [defaults stringForKey:USERDEFAULTS_WASSR_PASSWORD]))) {
 //         [tabBarController setSelectedIndex:3];
 //     }
-
     [[friendsNavigationController timelineViewController] setArray:[NSArray arrayWithObjects:@"hoge", @"fuga", nil]];
     [[repliesNavigationController timelineViewController] setArray:[NSArray arrayWithObjects:@"fuga", @"piyo", nil]];
     

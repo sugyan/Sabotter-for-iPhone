@@ -1,17 +1,14 @@
 //
-//  SBTimelineViewController.m
+//  SBStatusDetailViewController.m
 //  Sabotter
 //
-//  Created by sugyan on 09/12/20.
+//  Created by sugyan on 10/02/27.
 //
 
-#import "SBTimelineViewController.h"
 #import "SBStatusDetailViewController.h"
 
 
-@implementation SBTimelineViewController
-
-@synthesize array;
+@implementation SBStatusDetailViewController
 
 /*
 - (id)initWithStyle:(UITableViewStyle)style {
@@ -82,7 +79,7 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [array count] + 1;
+    return 0;
 }
 
 
@@ -97,13 +94,6 @@
     }
     
     // Set up the cell...
-    NSString *string;
-    if ([indexPath row] == 0) {
-        string = @"";
-    } else {
-        string = [array objectAtIndex:[indexPath row] - 1];
-    }
-    [[cell textLabel] setText:string];
 	
     return cell;
 }
@@ -114,8 +104,6 @@
 	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
 	// [self.navigationController pushViewController:anotherViewController];
 	// [anotherViewController release];
-    SBStatusDetailViewController *viewController = [[[SBStatusDetailViewController alloc] initWithNibName:@"SBStatusDetailViewController" bundle:nil] autorelease];
-    [[self navigationController] pushViewController:viewController animated:YES];
 }
 
 
@@ -165,3 +153,4 @@
 
 
 @end
+
