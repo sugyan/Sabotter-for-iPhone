@@ -52,6 +52,8 @@
     default:
         break;
     }
+
+    [self onChangeValueOfTextField:nil];
 }
 
 /*
@@ -96,24 +98,36 @@
     defalt:
         break;
     }
-    
+
     if ([enableSwitch isOn]) {
-        //TODO アカウント認証
+        // アカウント認証
+        NSString *username = [usernameField text];
+        NSString *password = [passwordField text];
         switch (service) {
         case SERVICE_TWITTER:
-            [defaults setObject:[usernameField text] forKey:USERDEFAULTS_TWITTER_USERNAME];
-            [defaults setObject:[passwordField text] forKey:USERDEFAULTS_TWITTER_PASSWORD];
+            [defaults setObject:username forKey:USERDEFAULTS_TWITTER_USERNAME];
+            [defaults setObject:password forKey:USERDEFAULTS_TWITTER_PASSWORD];
             break;
-        case SERVICE_WASSR:
-            [defaults setObject:[usernameField text] forKey:USERDEFAULTS_WASSR_USERNAME];
-            [defaults setObject:[passwordField text] forKey:USERDEFAULTS_WASSR_PASSWORD];
+        case SERVICE_WASSR: {
+            [defaults setObject:username forKey:USERDEFAULTS_WASSR_USERNAME];
+            [defaults setObject:password forKey:USERDEFAULTS_WASSR_PASSWORD];
+
+            NSString *path = [[NSBundle mainBundle] pathForResource:@"api" ofType:@"plist"];
+            NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
+            NSString *verify_url = [[dict objectForKey:@"wassr"] objectForKey:@"verify_credentials"];
+            HttpClient *client = [[[HttpClient alloc] init] autorelease];
+            [client setDelegate:self];
+            [client getWithCredential:verify_url
+                             username:username
+                             password:password];
             break;
+        }
         default:
             break;
         }
+    } else {
+        [self dismissModalViewControllerAnimated:YES];
     }
-
-    [self dismissModalViewControllerAnimated:YES];
 }
 
 - (IBAction)onEndEditingTextField:(id)sender {
@@ -125,9 +139,33 @@
     }
 }
 
+- (IBAction)onChangeValueOfTextField:(id)sender {
+    BOOL canSave = ([[usernameField text] length] > 0 && [[passwordField text] length] > 0);
+    if ([enableSwitch isOn]) {
+        [saveButton setEnabled:canSave];
+    } else {
+        // 使用しないのであれば入力されていなくても構わない
+        [saveButton setEnabled:YES];
+    }
+}
+
 - (IBAction)onChangeSwitch:(id)sender {
     [usernameField setEnabled:[enableSwitch isOn]];
     [passwordField setEnabled:[enableSwitch isOn]];
+    [self onChangeValueOfTextField:nil];
+}
+
+
+//////////////////////////////////////////////////
+// HttpClientProtocol method
+
+- (void)client:(HttpClient *)client didFinishLoading:(NSData *)data {
+    NSLog(@"client:didFinishLoading:");
+    NSLog(@"data: %@", [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease]);
+}
+
+- (void)client:(HttpClient *)client didFailWithError:(NSError *)error {
+    NSLog(@"client:didFailedWithError:");
 }
 
 

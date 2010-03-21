@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>twitter</key>
+	<dict>
+		<key>verify_credentials</key>
+		<string>http://twitter.com/account/verify_credentials.xml</string>
+	</dict>
+	<key>wassr</key>
+	<dict>
+		<key>verify_credentials</key>
+		<string>http://api.wassr.jp/footmark/recent.json</string>
+	</dict>
+</dict>
+</plist>

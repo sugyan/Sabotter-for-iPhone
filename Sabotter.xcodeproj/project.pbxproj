@@ -25,6 +25,8 @@
 		9E653AC50FA5F9C70065AF2A /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9E653AC40FA5F9C70065AF2A /* Entitlements.plist */; };
 		9E67232F0EF84DAD00EB1518 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9E67232E0EF84DAD00EB1518 /* Settings.bundle */; };
 		9EA326DE115508700072BC2C /* config.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EA326DD115508700072BC2C /* config.png */; };
+		9EA3270C11550F800072BC2C /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EA3270B11550F800072BC2C /* HttpClient.m */; };
+		9EA3271E115511140072BC2C /* api.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9EA3271D115511140072BC2C /* api.plist */; };
 		9ED604D810EF586500AAEB63 /* SBConfigAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ED604D610EF586500AAEB63 /* SBConfigAccountViewController.m */; };
 		9ED604DC10EF58A300AAEB63 /* SBConfigAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ED604DB10EF58A300AAEB63 /* SBConfigAccountViewController.xib */; };
 		9EE016C010DCBE2200484603 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EE016BF10DCBE2200484603 /* MainWindow.xib */; };
@@ -63,6 +65,9 @@
 		9E67232E0EF84DAD00EB1518 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		9E82A34110F1565F005C164A /* SBCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBCommon.h; path = Common/SBCommon.h; sourceTree = "<group>"; };
 		9EA326DD115508700072BC2C /* config.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = config.png; path = Resources/config.png; sourceTree = "<group>"; };
+		9EA3270A11550F800072BC2C /* HttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HttpClient.h; path = Util/HttpClient.h; sourceTree = "<group>"; };
+		9EA3270B11550F800072BC2C /* HttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HttpClient.m; path = Util/HttpClient.m; sourceTree = "<group>"; };
+		9EA3271D115511140072BC2C /* api.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = api.plist; path = Resources/api.plist; sourceTree = "<group>"; };
 		9ED604D510EF586500AAEB63 /* SBConfigAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBConfigAccountViewController.h; sourceTree = "<group>"; };
 		9ED604D610EF586500AAEB63 /* SBConfigAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBConfigAccountViewController.m; sourceTree = "<group>"; };
 		9ED604DB10EF58A300AAEB63 /* SBConfigAccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SBConfigAccountViewController.xib; path = XIB/SBConfigAccountViewController.xib; sourceTree = "<group>"; };
@@ -92,6 +97,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				9EA3270D11550F880072BC2C /* Util */,
+				9EA3270911550E440072BC2C /* SabotterCore */,
 				9E12CEF211394C06000AFE7C /* SBStatusDetailViewController.h */,
 				9E12CEF311394C06000AFE7C /* SBStatusDetailViewController.m */,
 				9E82A34010F15649005C164A /* Common */,
@@ -155,6 +162,7 @@
 				9EFAC24B0FE53CF700106278 /* Localizable.strings */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				9E67232E0EF84DAD00EB1518 /* Settings.bundle */,
+				9EA3271D115511140072BC2C /* api.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -175,6 +183,22 @@
 				9E82A34110F1565F005C164A /* SBCommon.h */,
 			);
 			name = Common;
+			sourceTree = "<group>";
+		};
+		9EA3270911550E440072BC2C /* SabotterCore */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = SabotterCore;
+			sourceTree = "<group>";
+		};
+		9EA3270D11550F880072BC2C /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				9EA3270A11550F800072BC2C /* HttpClient.h */,
+				9EA3270B11550F800072BC2C /* HttpClient.m */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 		9EE016B110DCBC9700484603 /* XIB */ = {
@@ -246,6 +270,7 @@
 				9ED604DC10EF58A300AAEB63 /* SBConfigAccountViewController.xib in Resources */,
 				9E12CEE611394BC8000AFE7C /* SBStatusDetailViewController.xib in Resources */,
 				9EA326DE115508700072BC2C /* config.png in Resources */,
+				9EA3271E115511140072BC2C /* api.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +288,7 @@
 				9E5277E510DE77EF00266F02 /* SBConfigTableViewController.m in Sources */,
 				9ED604D810EF586500AAEB63 /* SBConfigAccountViewController.m in Sources */,
 				9E12CEF411394C06000AFE7C /* SBStatusDetailViewController.m in Sources */,
+				9EA3270C11550F800072BC2C /* HttpClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
