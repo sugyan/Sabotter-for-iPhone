@@ -6,6 +6,7 @@
 //
 
 #import "SabotterAppDelegate.h"
+#import "TimelineViewController.h"
 
 
 @implementation SabotterAppDelegate
@@ -24,6 +25,11 @@
     // Add the tab bar controller's view to the window and display.
     [window addSubview:tabBarController.view];
     [window makeKeyAndVisible];
+
+    TimelineViewController *tvc0 = [[[TimelineViewController alloc] init] autorelease];
+    [[tabBarController.viewControllers objectAtIndex:0] pushViewController:tvc0 animated:NO];
+    TimelineViewController *tvc1 = [[[TimelineViewController alloc] init] autorelease];
+    [[tabBarController.viewControllers objectAtIndex:1] pushViewController:tvc1 animated:NO];
 
     return YES;
 }
