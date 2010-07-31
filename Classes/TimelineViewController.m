@@ -1,14 +1,14 @@
 //
-//  FirstViewController.m
+//  TimelineViewController.m
 //  Sabotter
 //
 //  Created by sugyan on 10/07/31.
 //
 
-#import "FirstViewController.h"
+#import "TimelineViewController.h"
 
 
-@implementation FirstViewController
+@implementation TimelineViewController
 
 
 /*

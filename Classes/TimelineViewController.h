@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  TimelineViewController.h
 //  Sabotter
 //
 //  Created by sugyan on 10/07/31.
@@ -8,7 +8,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface FirstViewController : UIViewController {
+@interface TimelineViewController : UIViewController {
 
 }
 
