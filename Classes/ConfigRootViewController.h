@@ -8,7 +8,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface ConfigRootViewController : UIViewController {
+@interface ConfigRootViewController : UITableViewController {
 
 }
 

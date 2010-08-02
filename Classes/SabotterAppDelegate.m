@@ -115,7 +115,7 @@
 #pragma mark touch event
 
 - (IBAction)pushConfigButton:(id)sender {
-    ConfigRootViewController *configRoot = [[[ConfigRootViewController alloc] init] autorelease];
+    ConfigRootViewController *configRoot = [[[ConfigRootViewController alloc] initWithNibName:@"ConfigRootView" bundle:nil] autorelease];
     UINavigationController *nav = [[[UINavigationController alloc] initWithRootViewController:configRoot] autorelease];
     nav.navigationBar.topItem.leftBarButtonItem = configDoneButton;
     [tabBarController presentModalViewController:nav animated:YES];
