@@ -6,6 +6,7 @@
 //
 
 #import "SabotterAppDelegate.h"
+#import "ConfigRootViewController.h"
 #import "TimelineViewController.h"
 
 
@@ -114,8 +115,15 @@
 #pragma mark touch event
 
 - (IBAction)pushConfigButton:(id)sender {
+    ConfigRootViewController *configRoot = [[[ConfigRootViewController alloc] init] autorelease];
+    UINavigationController *nav = [[[UINavigationController alloc] initWithRootViewController:configRoot] autorelease];
+    nav.navigationBar.topItem.leftBarButtonItem = configDoneButton;
+    [tabBarController presentModalViewController:nav animated:YES];
+}
+
+- (IBAction)pushConfigDoneButton:(id)sender {
+    [tabBarController.modalViewController dismissModalViewControllerAnimated:YES];
 }
 
 
 @end
-

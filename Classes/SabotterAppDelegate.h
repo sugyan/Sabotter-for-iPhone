@@ -11,11 +11,13 @@
     UIWindow *window;
     UITabBarController *tabBarController;
     IBOutlet UIBarButtonItem *configButton;
+    IBOutlet UIBarButtonItem *configDoneButton;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
 
 - (IBAction)pushConfigButton:(id)sender;
+- (IBAction)pushConfigDoneButton:(id)sender;
 
 @end

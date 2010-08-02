@@ -16,6 +16,8 @@
 		9E120BA31204485D00ACB990 /* TimelineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E120BA01204485D00ACB990 /* TimelineView.xib */; };
 		9E120BA41204485D00ACB990 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E120BA11204485D00ACB990 /* MainWindow.xib */; };
 		9E120C3112055CBA00ACB990 /* config.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E120C3012055CBA00ACB990 /* config.png */; };
+		9E120C631206A65400ACB990 /* ConfigRootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E120C621206A65400ACB990 /* ConfigRootView.xib */; };
+		9E120C6E1206AB8600ACB990 /* ConfigRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E120C6D1206AB8600ACB990 /* ConfigRootViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,9 @@
 		9E120BA01204485D00ACB990 /* TimelineView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TimelineView.xib; path = xib/TimelineView.xib; sourceTree = "<group>"; };
 		9E120BA11204485D00ACB990 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = xib/MainWindow.xib; sourceTree = "<group>"; };
 		9E120C3012055CBA00ACB990 /* config.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = config.png; path = Resources/config.png; sourceTree = "<group>"; };
+		9E120C531206A62900ACB990 /* ConfigRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigRootViewController.h; sourceTree = "<group>"; };
+		9E120C621206A65400ACB990 /* ConfigRootView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ConfigRootView.xib; path = xib/ConfigRootView.xib; sourceTree = "<group>"; };
+		9E120C6D1206AB8600ACB990 /* ConfigRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigRootViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +57,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				9E120C6D1206AB8600ACB990 /* ConfigRootViewController.m */,
+				9E120C531206A62900ACB990 /* ConfigRootViewController.h */,
 				9E120B9C1204484100ACB990 /* TimelineViewController.h */,
 				9E120B9D1204484100ACB990 /* TimelineViewController.m */,
 				1D3623240D0F684500981E51 /* SabotterAppDelegate.h */,
@@ -112,6 +119,7 @@
 		9E120B9F1204484B00ACB990 /* xib */ = {
 			isa = PBXGroup;
 			children = (
+				9E120C621206A65400ACB990 /* ConfigRootView.xib */,
 				9E120BA01204485D00ACB990 /* TimelineView.xib */,
 				9E120BA11204485D00ACB990 /* MainWindow.xib */,
 			);
@@ -171,6 +179,7 @@
 				9E120BA31204485D00ACB990 /* TimelineView.xib in Resources */,
 				9E120BA41204485D00ACB990 /* MainWindow.xib in Resources */,
 				9E120C3112055CBA00ACB990 /* config.png in Resources */,
+				9E120C631206A65400ACB990 /* ConfigRootView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +193,7 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* SabotterAppDelegate.m in Sources */,
 				9E120B9E1204484100ACB990 /* TimelineViewController.m in Sources */,
+				9E120C6E1206AB8600ACB990 /* ConfigRootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
