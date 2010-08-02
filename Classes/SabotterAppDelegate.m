@@ -116,6 +116,7 @@
 
 - (IBAction)pushConfigButton:(id)sender {
     ConfigRootViewController *configRoot = [[[ConfigRootViewController alloc] initWithNibName:@"ConfigRootView" bundle:nil] autorelease];
+    configRoot.title = NSLocalizedString(@"Config", nil);
     UINavigationController *nav = [[[UINavigationController alloc] initWithRootViewController:configRoot] autorelease];
     nav.navigationBar.topItem.leftBarButtonItem = configDoneButton;
     [tabBarController presentModalViewController:nav animated:YES];

@@ -84,10 +84,27 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellIdentifier] autorelease];
     }
     
     // Configure the cell...
+    switch (indexPath.section) {
+    case 0:
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        switch (indexPath.row) {
+        case 0:
+            cell.textLabel.text = NSLocalizedString(@"Twitter", nil);
+            break;
+        case 1:
+            cell.textLabel.text = NSLocalizedString(@"Wassr", nil);
+            break;
+        default:
+            break;
+        }
+        break;
+    default:
+        break;
+    }
     
     return cell;
 }
