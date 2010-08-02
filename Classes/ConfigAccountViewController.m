@@ -1,15 +1,14 @@
 //
-//  ConfigRootViewController.m
+//  ConfigAccountViewController.m
 //  Sabotter
 //
 //  Created by sugyan on 10/08/02.
 //
 
-#import "ConfigRootViewController.h"
 #import "ConfigAccountViewController.h"
 
 
-@implementation ConfigRootViewController
+@implementation ConfigAccountViewController
 
 
 #pragma mark -
@@ -58,23 +57,13 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 2;
+    return 1;
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    switch (section) {
-    case 0:
-        return 2;
-        break;
-    case 1:
-        return 1;
-        break;
-    default:
-        return 0;
-        break;
-    }
+    return 1;
 }
 
 
@@ -85,27 +74,10 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
     // Configure the cell...
-    switch (indexPath.section) {
-    case 0:
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        switch (indexPath.row) {
-        case 0:
-            cell.textLabel.text = NSLocalizedString(@"Twitter", nil);
-            break;
-        case 1:
-            cell.textLabel.text = NSLocalizedString(@"Wassr", nil);
-            break;
-        default:
-            break;
-        }
-        break;
-    default:
-        break;
-    }
     
     return cell;
 }
@@ -151,28 +123,18 @@
 */
 
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    switch (section) {
-    case 0:
-        return NSLocalizedString(@"Account", nil);
-        break;
-    case 1:
-        return NSLocalizedString(@"About", nil);
-        break;
-    default:
-        return @"";
-        break;
-    }
-}
-
-
 #pragma mark -
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Navigation logic may go here. Create and push another view controller.
-    ConfigAccountViewController *accountView = [[[ConfigAccountViewController alloc] initWithNibName:@"ConfigAccountView" bundle:nil] autorelease];
-    [self.navigationController pushViewController:accountView animated:YES];
+	/*
+	 <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+     // ...
+     // Pass the selected object to the new view controller.
+	 [self.navigationController pushViewController:detailViewController animated:YES];
+	 [detailViewController release];
+	 */
 }
 
 
@@ -198,3 +160,4 @@
 
 
 @end
+
