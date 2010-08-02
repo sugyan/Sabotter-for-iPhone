@@ -26,10 +26,14 @@
     [window addSubview:tabBarController.view];
     [window makeKeyAndVisible];
 
+    UINavigationController *nav0 = [tabBarController.viewControllers objectAtIndex:0];
     TimelineViewController *tvc0 = [[[TimelineViewController alloc] init] autorelease];
-    [[tabBarController.viewControllers objectAtIndex:0] pushViewController:tvc0 animated:NO];
+    [nav0 pushViewController:tvc0 animated:NO];
+    nav0.navigationBar.topItem.leftBarButtonItem = configButton;
+    UINavigationController *nav1 = [tabBarController.viewControllers objectAtIndex:1];
     TimelineViewController *tvc1 = [[[TimelineViewController alloc] init] autorelease];
-    [[tabBarController.viewControllers objectAtIndex:1] pushViewController:tvc1 animated:NO];
+    [nav1 pushViewController:tvc1 animated:NO];
+    nav1.navigationBar.topItem.leftBarButtonItem = configButton;
 
     return YES;
 }
@@ -104,6 +108,14 @@
     [window release];
     [super dealloc];
 }
+
+
+#pragma mark -
+#pragma mark touch event
+
+- (IBAction)pushConfigButton:(id)sender {
+}
+
 
 @end
 

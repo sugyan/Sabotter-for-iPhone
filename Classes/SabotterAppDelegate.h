@@ -10,9 +10,12 @@
 @interface SabotterAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
     UIWindow *window;
     UITabBarController *tabBarController;
+    IBOutlet UIBarButtonItem *configButton;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
+
+- (IBAction)pushConfigButton:(id)sender;
 
 @end

@@ -15,6 +15,7 @@
 		9E120B9E1204484100ACB990 /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E120B9D1204484100ACB990 /* TimelineViewController.m */; };
 		9E120BA31204485D00ACB990 /* TimelineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E120BA01204485D00ACB990 /* TimelineView.xib */; };
 		9E120BA41204485D00ACB990 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E120BA11204485D00ACB990 /* MainWindow.xib */; };
+		9E120C3112055CBA00ACB990 /* config.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E120C3012055CBA00ACB990 /* config.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		9E120B9D1204484100ACB990 /* TimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineViewController.m; sourceTree = "<group>"; };
 		9E120BA01204485D00ACB990 /* TimelineView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TimelineView.xib; path = xib/TimelineView.xib; sourceTree = "<group>"; };
 		9E120BA11204485D00ACB990 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = xib/MainWindow.xib; sourceTree = "<group>"; };
+		9E120C3012055CBA00ACB990 /* config.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = config.png; path = Resources/config.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9E120C2F12055CA600ACB990 /* image */,
 				9E120B9F1204484B00ACB990 /* xib */,
 				8D1107310486CEB800E47090 /* Sabotter-Info.plist */,
 			);
@@ -113,6 +116,14 @@
 				9E120BA11204485D00ACB990 /* MainWindow.xib */,
 			);
 			name = xib;
+			sourceTree = "<group>";
+		};
+		9E120C2F12055CA600ACB990 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				9E120C3012055CBA00ACB990 /* config.png */,
+			);
+			name = image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,6 +170,7 @@
 			files = (
 				9E120BA31204485D00ACB990 /* TimelineView.xib in Resources */,
 				9E120BA41204485D00ACB990 /* MainWindow.xib in Resources */,
+				9E120C3112055CBA00ACB990 /* config.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
