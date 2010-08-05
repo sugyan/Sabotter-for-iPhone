@@ -63,7 +63,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 1;
+    return 3;
 }
 
 
@@ -74,10 +74,26 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellIdentifier] autorelease];
     }
-    
+
     // Configure the cell...
+    switch (indexPath.row) {
+    case 0:
+        cell.textLabel.text = NSLocalizedString(@"Enable", nil);
+        [cell addSubview:enableSwitch];
+        break;
+    case 1:
+        cell.textLabel.text = NSLocalizedString(@"Username", nil);
+        [cell addSubview:usernameField];
+        break;
+    case 2:
+        cell.textLabel.text = NSLocalizedString(@"Password", nil);
+        [cell addSubview:passwordField];
+        break;
+    default:
+        break;
+    }
     
     return cell;
 }
@@ -121,6 +137,11 @@
     return YES;
 }
 */
+
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return NSLocalizedString(@"Account Info", nil);
+}
 
 
 #pragma mark -

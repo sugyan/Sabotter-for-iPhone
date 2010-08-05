@@ -172,6 +172,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Navigation logic may go here. Create and push another view controller.
     ConfigAccountViewController *accountView = [[[ConfigAccountViewController alloc] initWithNibName:@"ConfigAccountView" bundle:nil] autorelease];
+    accountView.title = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
     [self.navigationController pushViewController:accountView animated:YES];
 }
 

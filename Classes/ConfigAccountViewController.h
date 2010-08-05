@@ -9,7 +9,9 @@
 
 
 @interface ConfigAccountViewController : UITableViewController {
-
+    IBOutlet UISwitch *enableSwitch;
+    IBOutlet UITextField *usernameField;
+    IBOutlet UITextField *passwordField;
 }
 
 @end
