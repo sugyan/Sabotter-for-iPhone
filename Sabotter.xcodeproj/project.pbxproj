@@ -20,6 +20,7 @@
 		9E120C831206B1C600ACB990 /* ConfigRootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E120C821206B1C600ACB990 /* ConfigRootView.xib */; };
 		9E120CA71206B8AA00ACB990 /* ConfigAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E120CA51206B8AA00ACB990 /* ConfigAccountViewController.m */; };
 		9E120CB61206B8D500ACB990 /* ConfigAccountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E120CB51206B8D500ACB990 /* ConfigAccountView.xib */; };
+		9E4E5B391217E8200074B124 /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4E5B381217E8200074B124 /* HttpClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,8 @@
 		9E120CA41206B8AA00ACB990 /* ConfigAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigAccountViewController.h; sourceTree = "<group>"; };
 		9E120CA51206B8AA00ACB990 /* ConfigAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigAccountViewController.m; sourceTree = "<group>"; };
 		9E120CB51206B8D500ACB990 /* ConfigAccountView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ConfigAccountView.xib; path = xib/ConfigAccountView.xib; sourceTree = "<group>"; };
+		9E4E5B371217E8200074B124 /* HttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HttpClient.h; path = Util/HttpClient.h; sourceTree = "<group>"; };
+		9E4E5B381217E8200074B124 /* HttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HttpClient.m; path = Util/HttpClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				9E4E5B3B1217E8280074B124 /* Util */,
 				9E120C7E1206B19900ACB990 /* config */,
 				9E120B9C1204484100ACB990 /* TimelineViewController.h */,
 				9E120B9D1204484100ACB990 /* TimelineViewController.m */,
@@ -150,6 +154,15 @@
 			name = config;
 			sourceTree = "<group>";
 		};
+		9E4E5B3B1217E8280074B124 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				9E4E5B371217E8200074B124 /* HttpClient.h */,
+				9E4E5B381217E8200074B124 /* HttpClient.m */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -212,6 +225,7 @@
 				9E120B9E1204484100ACB990 /* TimelineViewController.m in Sources */,
 				9E120C7C1206B19300ACB990 /* ConfigRootViewController.m in Sources */,
 				9E120CA71206B8AA00ACB990 /* ConfigAccountViewController.m in Sources */,
+				9E4E5B391217E8200074B124 /* HttpClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
