@@ -20,7 +20,6 @@
 		9E120C831206B1C600ACB990 /* ConfigRootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E120C821206B1C600ACB990 /* ConfigRootView.xib */; };
 		9E120CA71206B8AA00ACB990 /* ConfigAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E120CA51206B8AA00ACB990 /* ConfigAccountViewController.m */; };
 		9E120CB61206B8D500ACB990 /* ConfigAccountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E120CB51206B8D500ACB990 /* ConfigAccountView.xib */; };
-		9E212386120BA00400B88415 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E212385120BA00400B88415 /* libcurl.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,17 +43,6 @@
 		9E120CA41206B8AA00ACB990 /* ConfigAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigAccountViewController.h; sourceTree = "<group>"; };
 		9E120CA51206B8AA00ACB990 /* ConfigAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigAccountViewController.m; sourceTree = "<group>"; };
 		9E120CB51206B8D500ACB990 /* ConfigAccountView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ConfigAccountView.xib; path = xib/ConfigAccountView.xib; sourceTree = "<group>"; };
-		9E212385120BA00400B88415 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcurl.a; sourceTree = "<group>"; };
-		9E2123A4120BB28600B88415 /* curl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = curl.h; path = curl/curl.h; sourceTree = "<group>"; };
-		9E2123A5120BB28600B88415 /* curlbuild.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = curlbuild.h; path = curl/curlbuild.h; sourceTree = "<group>"; };
-		9E2123A6120BB28600B88415 /* curlrules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = curlrules.h; path = curl/curlrules.h; sourceTree = "<group>"; };
-		9E2123A7120BB28600B88415 /* curlver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = curlver.h; path = curl/curlver.h; sourceTree = "<group>"; };
-		9E2123A8120BB28600B88415 /* easy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = easy.h; path = curl/easy.h; sourceTree = "<group>"; };
-		9E2123A9120BB28600B88415 /* mprintf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mprintf.h; path = curl/mprintf.h; sourceTree = "<group>"; };
-		9E2123AA120BB28600B88415 /* multi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = multi.h; path = curl/multi.h; sourceTree = "<group>"; };
-		9E2123AB120BB28600B88415 /* stdcheaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stdcheaders.h; path = curl/stdcheaders.h; sourceTree = "<group>"; };
-		9E2123AC120BB28600B88415 /* typecheck-gcc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "typecheck-gcc.h"; path = "curl/typecheck-gcc.h"; sourceTree = "<group>"; };
-		9E2123AD120BB28600B88415 /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = types.h; path = curl/types.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +53,6 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */,
-				9E212386120BA00400B88415 /* libcurl.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +82,6 @@
 		29B97314FDCFA39411CA2CEA /* Sabotter */ = {
 			isa = PBXGroup;
 			children = (
-				9E212378120BA00400B88415 /* extlib */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -162,48 +148,6 @@
 				9E120C7A1206B19300ACB990 /* ConfigRootViewController.m */,
 			);
 			name = config;
-			sourceTree = "<group>";
-		};
-		9E212378120BA00400B88415 /* extlib */ = {
-			isa = PBXGroup;
-			children = (
-				9E212379120BA00400B88415 /* include */,
-				9E212384120BA00400B88415 /* lib */,
-			);
-			path = extlib;
-			sourceTree = "<group>";
-		};
-		9E212379120BA00400B88415 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				9E2123A3120BB27700B88415 /* curl */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		9E212384120BA00400B88415 /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				9E212385120BA00400B88415 /* libcurl.a */,
-			);
-			path = lib;
-			sourceTree = "<group>";
-		};
-		9E2123A3120BB27700B88415 /* curl */ = {
-			isa = PBXGroup;
-			children = (
-				9E2123A4120BB28600B88415 /* curl.h */,
-				9E2123A5120BB28600B88415 /* curlbuild.h */,
-				9E2123A6120BB28600B88415 /* curlrules.h */,
-				9E2123A7120BB28600B88415 /* curlver.h */,
-				9E2123A8120BB28600B88415 /* easy.h */,
-				9E2123A9120BB28600B88415 /* mprintf.h */,
-				9E2123AA120BB28600B88415 /* multi.h */,
-				9E2123AB120BB28600B88415 /* stdcheaders.h */,
-				9E2123AC120BB28600B88415 /* typecheck-gcc.h */,
-				9E2123AD120BB28600B88415 /* types.h */,
-			);
-			name = curl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,10 +228,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Sabotter_Prefix.pch;
 				INFOPLIST_FILE = "Sabotter-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/extlib/lib\"",
-				);
 				PRODUCT_NAME = Sabotter;
 			};
 			name = Debug;
@@ -300,10 +240,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Sabotter_Prefix.pch;
 				INFOPLIST_FILE = "Sabotter-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/extlib/lib\"",
-				);
 				PRODUCT_NAME = Sabotter;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -317,8 +253,6 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "${SRCROOT}/extlib/include";
-				OTHER_LDFLAGS = "-lz";
 				PREBINDING = NO;
 				SDKROOT = iphoneos4.0;
 			};
