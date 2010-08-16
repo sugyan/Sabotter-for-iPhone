@@ -14,4 +14,7 @@
     IBOutlet UITextField *passwordField;
 }
 
+- (IBAction)onUsernameFieldExit:(id)sender;
+- (IBAction)onPasswordFieldExit:(id)sender;
+
 @end

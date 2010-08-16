@@ -179,5 +179,16 @@
 }
 
 
-@end
+#pragma mark -
+#pragma mark touch event
 
+- (IBAction)onUsernameFieldExit:(id)sender {
+    [passwordField becomeFirstResponder];
+}
+
+- (IBAction)onPasswordFieldExit:(id)sender {
+    [usernameField becomeFirstResponder];
+}
+
+
+@end
