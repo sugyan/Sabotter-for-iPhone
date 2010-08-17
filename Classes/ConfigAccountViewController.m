@@ -6,10 +6,12 @@
 //
 
 #import "ConfigAccountViewController.h"
+#import "SBApi.h"
 
 
 @implementation ConfigAccountViewController
 
+@synthesize service;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -33,10 +35,13 @@
 }
 */
 /*
+*/
 - (void)viewWillDisappear:(BOOL)animated {
+    [SBApi authenticate:self.service
+               username:usernameField.text
+               password:passwordField.text];
     [super viewWillDisappear:animated];
 }
-*/
 /*
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
