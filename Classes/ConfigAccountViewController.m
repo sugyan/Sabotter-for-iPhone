@@ -37,10 +37,16 @@
 /*
 */
 - (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+
+    NSLog(@"authenticate...");
+    void (^callback)(void) = ^(void) {
+        NSLog(@"authenticate done.");
+    };
     [SBApi authenticate:self.service
                username:usernameField.text
-               password:passwordField.text];
-    [super viewWillDisappear:animated];
+               password:passwordField.text
+               callback:callback];
 }
 /*
 - (void)viewDidDisappear:(BOOL)animated {

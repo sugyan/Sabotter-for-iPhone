@@ -24,8 +24,9 @@
     return [NSObject class];
 }
 
-+ (void)authenticate:(SBService)service username:(NSString *)username password:(NSString *)password {
++ (void)authenticate:(SBService)service username:(NSString *)username password:(NSString *)password callback:(void (^)(void))callback {
     [[SBApi classForService:service] authenticateWithUsername:username password:password];
+    callback();
 }
 
 @end
