@@ -22,6 +22,10 @@
     [super viewDidLoad];
 
     self.tableView.allowsSelection = NO;
+    self.navigationController.navigationBar.topItem.leftBarButtonItem =
+        [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave
+                                                       target:self
+                                                       action:@selector(onPushSaveButton:)] autorelease];
 }
 
 /*
@@ -35,19 +39,10 @@
 }
 */
 /*
-*/
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-
-    NSLog(@"authenticate...");
-    void (^callback)(void) = ^(void) {
-        NSLog(@"authenticate done.");
-    };
-    [SBApi authenticate:self.service
-               username:usernameField.text
-               password:passwordField.text
-               callback:callback];
 }
+*/
 /*
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
@@ -199,6 +194,24 @@
 
 - (IBAction)onPasswordFieldExit:(id)sender {
     [usernameField becomeFirstResponder];
+}
+
+- (void)onPushSaveButton:(id)sender {
+    // view
+    UIView *overlayView = [[[UIView alloc] initWithFrame:self.navigationController.view.frame] autorelease];
+    overlayView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
+    UIActivityIndicatorView *indicatorView =
+        [[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge] autorelease];
+    indicatorView.center = overlayView.center;
+    [overlayView addSubview:indicatorView];
+    [self.navigationController.view addSubview:overlayView];
+    [indicatorView startAnimating];
+    // authentication
+    void (^callback)(void) = ^{
+        NSLog(@"callback");
+        [overlayView removeFromSuperview];
+    };
+    [SBApi authenticate:self.service username:@"username" password:@"password" callback:callback];
 }
 
 

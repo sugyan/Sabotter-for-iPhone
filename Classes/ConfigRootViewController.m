@@ -91,7 +91,7 @@
     // Configure the cell...
     switch (indexPath.section) {
     case 0:
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
         switch (indexPath.row) {
         case 0:
             cell.textLabel.text = NSLocalizedString(@"Twitter", nil);
@@ -174,8 +174,10 @@
     switch (indexPath.section) {
     case 0: {
         ConfigAccountViewController *accountView = [[[ConfigAccountViewController alloc] initWithNibName:@"ConfigAccountView" bundle:nil] autorelease];
-        accountView.title = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
-        [self.navigationController pushViewController:accountView animated:YES];
+        accountView.service = SERVICE_WASSR;
+        UINavigationController *accountNavi =
+            [[[UINavigationController alloc] initWithRootViewController:accountView] autorelease];
+        [self presentModalViewController:accountNavi animated:YES];
         break;
     }
     default:
