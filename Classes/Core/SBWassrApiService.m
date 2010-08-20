@@ -6,13 +6,30 @@
 //
 
 #import "SBWassrApiService.h"
+#import "HttpClient.h"
+#import "NSData+Base64.h"
 
 
 @implementation SBWassrApiService
 
 + (void)authenticateWithUsername:(NSString *)username password:(NSString *)password callback:(void (^)(NSString *))callback {
     LOG_CURRENT_METHOD;
-    callback(nil);
+    NSURL *url = [NSURL URLWithString:@"http://api.wassr.jp/statuses/show.json"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    NSString *base64 = [[[NSString stringWithFormat:@"%@:%@", username, password] dataUsingEncoding:NSUTF8StringEncoding] base64EncodedString];
+    [request setValue:[NSString stringWithFormat:@"Basic %@", base64] forHTTPHeaderField:@"Authorization"];
+
+    void (^onSuccess)(NSData *) = ^(NSData *data) {
+        LOG_CURRENT_METHOD;
+        LOG(@"success: %@", [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease]);
+        callback(nil);
+    };
+    void (^onError)(NSError *) = ^(NSError *error) {
+        LOG_CURRENT_METHOD;
+        LOG(@"error: %@", error);
+        callback(nil);
+    };
+    [HttpClient request:request success:onSuccess error:onError];
 }
 
 @end

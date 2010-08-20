@@ -29,8 +29,10 @@
     [request setHTTPMethod:method];
     [request setValue:header forHTTPHeaderField:@"Authorization"];
     [request setHTTPBody:body];
+
     void (^onSuccess)(NSData *) = ^(NSData *data) {
         LOG_CURRENT_METHOD;
+        LOG(@"success");
         NSDictionary *result = [NSURL ab_parseURLQueryString:[[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease]];
         callback([result objectForKey:@"screen_name"]);
     };
