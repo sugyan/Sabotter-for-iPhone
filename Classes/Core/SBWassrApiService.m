@@ -7,6 +7,7 @@
 
 #import "SBWassrApiService.h"
 #import "HttpClient.h"
+#import "JSON.h"
 #import "NSData+Base64.h"
 
 
@@ -21,8 +22,9 @@
 
     void (^onSuccess)(NSData *) = ^(NSData *data) {
         LOG_CURRENT_METHOD;
-        LOG(@"success: %@", [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease]);
-        callback(nil);
+        LOG(@"success");
+        NSArray *result = [[[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease] JSONValue];
+        callback([[result objectAtIndex:0] objectForKey:@"user_login_id"]);
     };
     void (^onError)(NSError *) = ^(NSError *error) {
         LOG_CURRENT_METHOD;

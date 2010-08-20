@@ -12,6 +12,11 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
+		9E033CDC121EFB9C00B171A4 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E033CD3121EFB9C00B171A4 /* NSObject+SBJSON.m */; };
+		9E033CDD121EFB9C00B171A4 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E033CD5121EFB9C00B171A4 /* NSString+SBJSON.m */; };
+		9E033CDE121EFB9C00B171A4 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E033CD7121EFB9C00B171A4 /* SBJsonBase.m */; };
+		9E033CDF121EFB9C00B171A4 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E033CD9121EFB9C00B171A4 /* SBJsonParser.m */; };
+		9E033CE0121EFB9C00B171A4 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E033CDB121EFB9C00B171A4 /* SBJsonWriter.m */; };
 		9E120B9E1204484100ACB990 /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E120B9D1204484100ACB990 /* TimelineViewController.m */; };
 		9E120BA31204485D00ACB990 /* TimelineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E120BA01204485D00ACB990 /* TimelineView.xib */; };
 		9E120BA41204485D00ACB990 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E120BA11204485D00ACB990 /* MainWindow.xib */; };
@@ -41,6 +46,17 @@
 		28A0AB4B0D9B1048005BE974 /* Sabotter_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sabotter_Prefix.pch; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Sabotter-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Sabotter-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		9E033CD1121EFB9C00B171A4 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSON.h; path = "json-framework/JSON.h"; sourceTree = "<group>"; };
+		9E033CD2121EFB9C00B171A4 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+SBJSON.h"; path = "json-framework/NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		9E033CD3121EFB9C00B171A4 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+SBJSON.m"; path = "json-framework/NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		9E033CD4121EFB9C00B171A4 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+SBJSON.h"; path = "json-framework/NSString+SBJSON.h"; sourceTree = "<group>"; };
+		9E033CD5121EFB9C00B171A4 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+SBJSON.m"; path = "json-framework/NSString+SBJSON.m"; sourceTree = "<group>"; };
+		9E033CD6121EFB9C00B171A4 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonBase.h; path = "json-framework/SBJsonBase.h"; sourceTree = "<group>"; };
+		9E033CD7121EFB9C00B171A4 /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonBase.m; path = "json-framework/SBJsonBase.m"; sourceTree = "<group>"; };
+		9E033CD8121EFB9C00B171A4 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonParser.h; path = "json-framework/SBJsonParser.h"; sourceTree = "<group>"; };
+		9E033CD9121EFB9C00B171A4 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonParser.m; path = "json-framework/SBJsonParser.m"; sourceTree = "<group>"; };
+		9E033CDA121EFB9C00B171A4 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonWriter.h; path = "json-framework/SBJsonWriter.h"; sourceTree = "<group>"; };
+		9E033CDB121EFB9C00B171A4 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonWriter.m; path = "json-framework/SBJsonWriter.m"; sourceTree = "<group>"; };
 		9E120B9C1204484100ACB990 /* TimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineViewController.h; sourceTree = "<group>"; };
 		9E120B9D1204484100ACB990 /* TimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineViewController.m; sourceTree = "<group>"; };
 		9E120BA01204485D00ACB990 /* TimelineView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TimelineView.xib; path = xib/TimelineView.xib; sourceTree = "<group>"; };
@@ -90,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				9E39909E121C475F009170DF /* oauthcore */,
+				9E033CD0121EFB8300B171A4 /* json-framework */,
 				9E1693011219A5E0005E389C /* Common.h */,
 				9E169356121A05AF005E389C /* Core */,
 				9E4E5B3B1217E8280074B124 /* Util */,
@@ -150,6 +167,24 @@
 				288765070DF74369002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9E033CD0121EFB8300B171A4 /* json-framework */ = {
+			isa = PBXGroup;
+			children = (
+				9E033CD1121EFB9C00B171A4 /* JSON.h */,
+				9E033CD2121EFB9C00B171A4 /* NSObject+SBJSON.h */,
+				9E033CD3121EFB9C00B171A4 /* NSObject+SBJSON.m */,
+				9E033CD4121EFB9C00B171A4 /* NSString+SBJSON.h */,
+				9E033CD5121EFB9C00B171A4 /* NSString+SBJSON.m */,
+				9E033CD6121EFB9C00B171A4 /* SBJsonBase.h */,
+				9E033CD7121EFB9C00B171A4 /* SBJsonBase.m */,
+				9E033CD8121EFB9C00B171A4 /* SBJsonParser.h */,
+				9E033CD9121EFB9C00B171A4 /* SBJsonParser.m */,
+				9E033CDA121EFB9C00B171A4 /* SBJsonWriter.h */,
+				9E033CDB121EFB9C00B171A4 /* SBJsonWriter.m */,
+			);
+			name = "json-framework";
 			sourceTree = "<group>";
 		};
 		9E120B9F1204484B00ACB990 /* xib */ = {
@@ -290,6 +325,11 @@
 				9E3990A8121C4797009170DF /* OAuthCore.m in Sources */,
 				9E3836D4121DF9040097E331 /* SBTwitterApiService.m in Sources */,
 				9E3836E5121DFC840097E331 /* SBConfig.m in Sources */,
+				9E033CDC121EFB9C00B171A4 /* NSObject+SBJSON.m in Sources */,
+				9E033CDD121EFB9C00B171A4 /* NSString+SBJSON.m in Sources */,
+				9E033CDE121EFB9C00B171A4 /* SBJsonBase.m in Sources */,
+				9E033CDF121EFB9C00B171A4 /* SBJsonParser.m in Sources */,
+				9E033CE0121EFB9C00B171A4 /* SBJsonWriter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
