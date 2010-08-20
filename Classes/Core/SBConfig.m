@@ -29,11 +29,17 @@ static SBConfig *instance = nil;
     if (self = [super init]) {
         NSDictionary *configDict =
             [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"config" ofType:@"plist"]];
-        twitter_consumer_key    = [configDict objectForKey:@"twitter_consumer_key"];
-        twitter_consumer_secret = [configDict objectForKey:@"twitter_consumer_secret"];
+        twitter_consumer_key    = [[configDict objectForKey:@"twitter_consumer_key"]    retain];
+        twitter_consumer_secret = [[configDict objectForKey:@"twitter_consumer_secret"] retain];
     }
 
     return self;
+}
+
+- (void)dealloc {
+    [twitter_consumer_key    release];
+    [twitter_consumer_secret release];
+    [super dealloc];
 }
 
 

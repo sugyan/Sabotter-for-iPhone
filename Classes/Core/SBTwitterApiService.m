@@ -9,6 +9,7 @@
 #import "SBConfig.h"
 #import "HttpClient.h"
 #import "OAuthCore.h"
+#import "OAuth+Additions.h"
 
 
 @implementation SBTwitterApiService
@@ -28,7 +29,9 @@
     [request setValue:header forHTTPHeaderField:@"Authorization"];
     [request setHTTPBody:body];
     void (^onSuccess)(NSData *) = ^(NSData *data) {
-        NSLog(@"onSuccess: %@", [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease]);
+        NSLog(@"onSuccess");
+        NSDictionary *result = [NSURL ab_parseURLQueryString:[[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease]];
+        NSLog(@"result: %@", result);
         callback();
     };
     void (^onError)(NSError *) = ^(NSError *error) {
