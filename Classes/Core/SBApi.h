@@ -12,7 +12,7 @@
 @protocol SBApiProtocol
 
 @required
-+ (void)authenticateWithUsername:(NSString *)name password:(NSString *)pass;
++ (void)authenticateWithUsername:(NSString *)username password:(NSString *)password callback:(void (^)(void))callback;
 
 @end
 

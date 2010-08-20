@@ -209,9 +209,14 @@
     // authentication
     void (^callback)(void) = ^{
         NSLog(@"callback");
-        [overlayView removeFromSuperview];
+        // view操作はmain queueで
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            [overlayView removeFromSuperview];
+        });
     };
-    [SBApi authenticate:self.service username:@"username" password:@"password" callback:callback];
+    [SBApi authenticate:self.service
+               username:usernameField.text
+               password:passwordField.text callback:callback];
 }
 
 

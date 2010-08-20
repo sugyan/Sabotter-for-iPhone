@@ -22,6 +22,12 @@
 		9E120CB61206B8D500ACB990 /* ConfigAccountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E120CB51206B8D500ACB990 /* ConfigAccountView.xib */; };
 		9E169355121A05A6005E389C /* SBApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E169354121A05A6005E389C /* SBApi.m */; };
 		9E16936C121A0B26005E389C /* SBWassrApiService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E16936B121A0B26005E389C /* SBWassrApiService.m */; };
+		9E3836D4121DF9040097E331 /* SBTwitterApiService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3836D3121DF9040097E331 /* SBTwitterApiService.m */; };
+		9E3836E5121DFC840097E331 /* SBConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3836E4121DFC840097E331 /* SBConfig.m */; };
+		9E3836F7121E03BA0097E331 /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9E3836F6121E03BA0097E331 /* config.plist */; };
+		9E3990A6121C4797009170DF /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3990A1121C4797009170DF /* NSData+Base64.m */; };
+		9E3990A7121C4797009170DF /* OAuth+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3990A3121C4797009170DF /* OAuth+Additions.m */; };
+		9E3990A8121C4797009170DF /* OAuthCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3990A5121C4797009170DF /* OAuthCore.m */; };
 		9E4E5B391217E8200074B124 /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4E5B381217E8200074B124 /* HttpClient.m */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +57,17 @@
 		9E169354121A05A6005E389C /* SBApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBApi.m; path = Core/SBApi.m; sourceTree = "<group>"; };
 		9E16936A121A0B26005E389C /* SBWassrApiService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBWassrApiService.h; path = Core/SBWassrApiService.h; sourceTree = "<group>"; };
 		9E16936B121A0B26005E389C /* SBWassrApiService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBWassrApiService.m; path = Core/SBWassrApiService.m; sourceTree = "<group>"; };
+		9E3836D2121DF9040097E331 /* SBTwitterApiService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBTwitterApiService.h; path = Core/SBTwitterApiService.h; sourceTree = "<group>"; };
+		9E3836D3121DF9040097E331 /* SBTwitterApiService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBTwitterApiService.m; path = Core/SBTwitterApiService.m; sourceTree = "<group>"; };
+		9E3836E3121DFC840097E331 /* SBConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBConfig.h; path = Core/SBConfig.h; sourceTree = "<group>"; };
+		9E3836E4121DFC840097E331 /* SBConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBConfig.m; path = Core/SBConfig.m; sourceTree = "<group>"; };
+		9E3836F6121E03BA0097E331 /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = config.plist; path = Resources/config.plist; sourceTree = "<group>"; };
+		9E3990A0121C4797009170DF /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Base64.h"; path = "oauthcore/NSData+Base64.h"; sourceTree = "<group>"; };
+		9E3990A1121C4797009170DF /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Base64.m"; path = "oauthcore/NSData+Base64.m"; sourceTree = "<group>"; };
+		9E3990A2121C4797009170DF /* OAuth+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "OAuth+Additions.h"; path = "oauthcore/OAuth+Additions.h"; sourceTree = "<group>"; };
+		9E3990A3121C4797009170DF /* OAuth+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "OAuth+Additions.m"; path = "oauthcore/OAuth+Additions.m"; sourceTree = "<group>"; };
+		9E3990A4121C4797009170DF /* OAuthCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAuthCore.h; path = oauthcore/OAuthCore.h; sourceTree = "<group>"; };
+		9E3990A5121C4797009170DF /* OAuthCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OAuthCore.m; path = oauthcore/OAuthCore.m; sourceTree = "<group>"; };
 		9E4E5B371217E8200074B124 /* HttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HttpClient.h; path = Util/HttpClient.h; sourceTree = "<group>"; };
 		9E4E5B381217E8200074B124 /* HttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HttpClient.m; path = Util/HttpClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +89,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				9E39909E121C475F009170DF /* oauthcore */,
 				9E1693011219A5E0005E389C /* Common.h */,
 				9E169356121A05AF005E389C /* Core */,
 				9E4E5B3B1217E8280074B124 /* Util */,
@@ -116,6 +134,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9E3836F6121E03BA0097E331 /* config.plist */,
 				9E120C2F12055CA600ACB990 /* image */,
 				9E120B9F1204484B00ACB990 /* xib */,
 				8D1107310486CEB800E47090 /* Sabotter-Info.plist */,
@@ -166,12 +185,29 @@
 		9E169356121A05AF005E389C /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				9E3836D2121DF9040097E331 /* SBTwitterApiService.h */,
+				9E3836D3121DF9040097E331 /* SBTwitterApiService.m */,
 				9E16936A121A0B26005E389C /* SBWassrApiService.h */,
 				9E16936B121A0B26005E389C /* SBWassrApiService.m */,
 				9E169353121A05A6005E389C /* SBApi.h */,
 				9E169354121A05A6005E389C /* SBApi.m */,
+				9E3836E3121DFC840097E331 /* SBConfig.h */,
+				9E3836E4121DFC840097E331 /* SBConfig.m */,
 			);
 			name = Core;
+			sourceTree = "<group>";
+		};
+		9E39909E121C475F009170DF /* oauthcore */ = {
+			isa = PBXGroup;
+			children = (
+				9E3990A0121C4797009170DF /* NSData+Base64.h */,
+				9E3990A1121C4797009170DF /* NSData+Base64.m */,
+				9E3990A2121C4797009170DF /* OAuth+Additions.h */,
+				9E3990A3121C4797009170DF /* OAuth+Additions.m */,
+				9E3990A4121C4797009170DF /* OAuthCore.h */,
+				9E3990A5121C4797009170DF /* OAuthCore.m */,
+			);
+			name = oauthcore;
 			sourceTree = "<group>";
 		};
 		9E4E5B3B1217E8280074B124 /* Util */ = {
@@ -230,6 +266,7 @@
 				9E120C3112055CBA00ACB990 /* config.png in Resources */,
 				9E120C831206B1C600ACB990 /* ConfigRootView.xib in Resources */,
 				9E120CB61206B8D500ACB990 /* ConfigAccountView.xib in Resources */,
+				9E3836F7121E03BA0097E331 /* config.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +285,11 @@
 				9E4E5B391217E8200074B124 /* HttpClient.m in Sources */,
 				9E169355121A05A6005E389C /* SBApi.m in Sources */,
 				9E16936C121A0B26005E389C /* SBWassrApiService.m in Sources */,
+				9E3990A6121C4797009170DF /* NSData+Base64.m in Sources */,
+				9E3990A7121C4797009170DF /* OAuth+Additions.m in Sources */,
+				9E3990A8121C4797009170DF /* OAuthCore.m in Sources */,
+				9E3836D4121DF9040097E331 /* SBTwitterApiService.m in Sources */,
+				9E3836E5121DFC840097E331 /* SBConfig.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

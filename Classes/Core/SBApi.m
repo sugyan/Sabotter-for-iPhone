@@ -6,6 +6,7 @@
 //
 
 #import "SBApi.h"
+#import "SBTwitterApiService.h"
 #import "SBWassrApiService.h"
 
 
@@ -14,6 +15,7 @@
 + (Class <SBApiProtocol>)classForService:(SBService)service {
     switch (service) {
     case SERVICE_TWITTER:
+        return [SBTwitterApiService class];
         break;
     case SERVICE_WASSR:
         return [SBWassrApiService class];
@@ -25,8 +27,7 @@
 }
 
 + (void)authenticate:(SBService)service username:(NSString *)username password:(NSString *)password callback:(void (^)(void))callback {
-    [[SBApi classForService:service] authenticateWithUsername:username password:password];
-    callback();
+    [[SBApi classForService:service] authenticateWithUsername:username password:password callback:callback];
 }
 
 @end

@@ -12,6 +12,7 @@
 
 }
 
-+ (void)get:(NSURL *)url success:(void (^)(NSData *))callback_ok error:(void (^)(NSError *))callback_ng;
++ (void)get:(NSURL *)url success:(void (^)(NSData *))onSuccess error:(void (^)(NSError *))onError;
++ (void)request:(NSURLRequest *)request success:(void (^)(NSData *))onSuccess error:(void (^)(NSError *))onError;
 
 @end
