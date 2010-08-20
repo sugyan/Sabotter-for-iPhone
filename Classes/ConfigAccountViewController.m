@@ -207,12 +207,18 @@
     [self.navigationController.view addSubview:overlayView];
     [indicatorView startAnimating];
     // authentication
-    void (^callback)(void) = ^{
-        NSLog(@"callback");
+    void (^callback)(NSString *username) = ^(NSString *username) {
+        LOG(@"callback: %@", username);
         // view操作はmain queueで
         dispatch_sync(dispatch_get_main_queue(), ^{
             [overlayView removeFromSuperview];
         });
+        // usernameが取得できたときだけModalViewController終了
+        if (username) {
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                [self dismissModalViewControllerAnimated:YES];
+            });
+        }
     };
     [SBApi authenticate:self.service
                username:usernameField.text

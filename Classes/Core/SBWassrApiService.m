@@ -10,8 +10,9 @@
 
 @implementation SBWassrApiService
 
-+ (void)authenticateWithUsername:(NSString *)username password:(NSString *)password callback:(void (^)(void))callback {
-    NSLog(@"authenticateWithUsername:password");
++ (void)authenticateWithUsername:(NSString *)username password:(NSString *)password callback:(void (^)(NSString *))callback {
+    LOG_CURRENT_METHOD;
+    callback(nil);
 }
 
 @end

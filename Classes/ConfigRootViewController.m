@@ -174,7 +174,16 @@
     switch (indexPath.section) {
     case 0: {
         ConfigAccountViewController *accountView = [[[ConfigAccountViewController alloc] initWithNibName:@"ConfigAccountView" bundle:nil] autorelease];
-        accountView.service = SERVICE_WASSR;
+        switch (indexPath.row) {
+        case 0:
+            accountView.service = SERVICE_TWITTER;
+            break;
+        case 1:
+            accountView.service = SERVICE_WASSR;
+            break;
+        default:
+            break;
+        }
         UINavigationController *accountNavi =
             [[[UINavigationController alloc] initWithRootViewController:accountView] autorelease];
         [self presentModalViewController:accountNavi animated:YES];

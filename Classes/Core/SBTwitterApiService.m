@@ -14,7 +14,8 @@
 
 @implementation SBTwitterApiService
 
-+ (void)authenticateWithUsername:(NSString *)username password:(NSString *)password callback:(void (^)(void))callback {
++ (void)authenticateWithUsername:(NSString *)username password:(NSString *)password callback:(void (^)(NSString *))callback {
+    LOG_CURRENT_METHOD;
     SBConfig *config = [SBConfig instance];
     NSString *consumer_key    = config.twitter_consumer_key;
     NSString *consumer_secret = config.twitter_consumer_secret;
@@ -29,14 +30,14 @@
     [request setValue:header forHTTPHeaderField:@"Authorization"];
     [request setHTTPBody:body];
     void (^onSuccess)(NSData *) = ^(NSData *data) {
-        NSLog(@"onSuccess");
+        LOG_CURRENT_METHOD;
         NSDictionary *result = [NSURL ab_parseURLQueryString:[[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease]];
-        NSLog(@"result: %@", result);
-        callback();
+        callback([result objectForKey:@"screen_name"]);
     };
     void (^onError)(NSError *) = ^(NSError *error) {
-        NSLog(@"onError: %@", error);
-        callback();
+        LOG_CURRENT_METHOD;
+        LOG(@"error: %@", error);
+        callback(nil);
     };
     [HttpClient request:request success:onSuccess error:onError];
 }
