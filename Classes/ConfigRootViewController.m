@@ -16,13 +16,32 @@
 #pragma mark View lifecycle
 
 /*
+*/
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    [[NSNotificationCenter defaultCenter] addObserverForName:NOTIFICATION_AUTHENTICATED
+                                                      object:nil
+                                                       queue:[NSOperationQueue currentQueue]
+                                                  usingBlock:^(NSNotification *notification) {
+        NSDictionary *userInfo = [notification userInfo];
+        NSString *screen_name = [userInfo objectForKey:@"screen_name"];
+        NSIndexPath *indexPath;
+        switch ([[notification object] service]) {
+        case SERVICE_TWITTER:
+            indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+            break;
+        case SERVICE_WASSR:
+            indexPath = [NSIndexPath indexPathForRow:1 inSection:0];
+            break;
+        default:
+            break;
+        }
+        [self.tableView cellForRowAtIndexPath:indexPath].detailTextLabel.text = screen_name;
+    }];
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-*/
 
 /*
 - (void)viewWillAppear:(BOOL)animated {
@@ -106,6 +125,7 @@
     default:
         break;
     }
+    cell.detailTextLabel.textColor = [UIColor darkGrayColor];
     
     return cell;
 }
