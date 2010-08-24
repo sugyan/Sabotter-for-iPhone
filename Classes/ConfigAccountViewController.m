@@ -207,18 +207,14 @@
     [self.navigationController.view addSubview:overlayView];
     [indicatorView startAnimating];
     // authentication
-    void (^callback)(NSString *) = ^(NSString *username) {
-        LOG(@"callback: %@", username);
+    void (^callback)(BOOL) = ^(BOOL result) {
+        LOG(@"callback: %@", result ? @"OK" : @"NG");
         // view操作はmain queueで
         dispatch_sync(dispatch_get_main_queue(), ^{
             [overlayView removeFromSuperview];
         });
-        // usernameが取得できたときだけModalViewController終了
-        if (username) {
-            [[NSNotificationCenter defaultCenter]
-                postNotificationName:NOTIFICATION_AUTHENTICATED
-                              object:self
-                            userInfo:[NSDictionary dictionaryWithObject:username forKey:@"screen_name"]];
+        // 結果がOKだった場合だけModalViewController終了
+        if (result) {
             dispatch_sync(dispatch_get_main_queue(), ^{
                 [self dismissModalViewControllerAnimated:YES];
             });

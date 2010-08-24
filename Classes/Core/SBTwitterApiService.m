@@ -14,7 +14,7 @@
 
 @implementation SBTwitterApiService
 
-+ (void)authenticateWithUsername:(NSString *)username password:(NSString *)password callback:(void (^)(NSString *))callback {
++ (void)authenticateWithUsername:(NSString *)username password:(NSString *)password callback:(void (^)(BOOL))callback {
     LOG_CURRENT_METHOD;
     SBConfig *config = [SBConfig instance];
     NSString *consumer_key    = config.twitter_consumer_key;
@@ -33,13 +33,19 @@
     void (^onSuccess)(NSData *) = ^(NSData *data) {
         LOG_CURRENT_METHOD;
         LOG(@"success");
-        NSDictionary *result = [NSURL ab_parseURLQueryString:[[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease]];
-        callback([result objectForKey:@"screen_name"]);
+        // NSDictionary *result = [NSURL ab_parseURLQueryString:[[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease]];
+        [[NSNotificationCenter defaultCenter]
+                postNotificationName:NOTIFICATION_AUTHENTICATED
+                              object:self
+                            userInfo:[NSDictionary dictionaryWithObjectsAndKeys:username, @"screen_name",
+                                                   [NSNumber numberWithInt:SERVICE_TWITTER], @"service",
+                                                   nil]];
+        callback(YES);
     };
     void (^onError)(NSError *) = ^(NSError *error) {
         LOG_CURRENT_METHOD;
         LOG(@"error: %@", error);
-        callback(nil);
+        callback(NO);
     };
     [HttpClient request:request success:onSuccess error:onError];
 }

@@ -13,7 +13,7 @@
 
 @implementation SBWassrApiService
 
-+ (void)authenticateWithUsername:(NSString *)username password:(NSString *)password callback:(void (^)(NSString *))callback {
++ (void)authenticateWithUsername:(NSString *)username password:(NSString *)password callback:(void (^)(BOOL))callback {
     LOG_CURRENT_METHOD;
     NSURL *url = [NSURL URLWithString:@"http://api.wassr.jp/statuses/show.json"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
@@ -23,13 +23,19 @@
     void (^onSuccess)(NSData *) = ^(NSData *data) {
         LOG_CURRENT_METHOD;
         LOG(@"success");
-        NSArray *result = [[[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease] JSONValue];
-        callback([[result objectAtIndex:0] objectForKey:@"user_login_id"]);
+        // NSArray *result = [[[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease] JSONValue];
+        [[NSNotificationCenter defaultCenter]
+                postNotificationName:NOTIFICATION_AUTHENTICATED
+                              object:self
+                            userInfo:[NSDictionary dictionaryWithObjectsAndKeys:username, @"screen_name",
+                                                   [NSNumber numberWithInt:SERVICE_WASSR], @"service",
+                                                   nil]];
+        callback(YES);
     };
     void (^onError)(NSError *) = ^(NSError *error) {
         LOG_CURRENT_METHOD;
         LOG(@"error: %@", error);
-        callback(nil);
+        callback(NO);
     };
     [HttpClient request:request success:onSuccess error:onError];
 }

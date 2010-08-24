@@ -28,7 +28,7 @@
         NSDictionary *userInfo = [notification userInfo];
         NSString *screen_name = [userInfo objectForKey:@"screen_name"];
         NSIndexPath *indexPath;
-        switch ([[notification object] service]) {
+        switch ([[userInfo objectForKey:@"service"] intValue]) {
         case SERVICE_TWITTER:
             indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
             break;
@@ -40,7 +40,6 @@
         }
         [self.tableView cellForRowAtIndexPath:indexPath].detailTextLabel.text = screen_name;
     }];
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 /*
