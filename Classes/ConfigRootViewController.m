@@ -20,26 +20,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // Notification
     [[NSNotificationCenter defaultCenter] addObserverForName:NOTIFICATION_AUTHENTICATED
                                                       object:nil
                                                        queue:[NSOperationQueue currentQueue]
-                                                  usingBlock:^(NSNotification *notification) {
-        NSDictionary *userInfo = [notification userInfo];
-        NSString *screen_name = [userInfo objectForKey:@"screen_name"];
-        NSIndexPath *indexPath;
-        switch ([[userInfo objectForKey:@"service"] intValue]) {
-        case SERVICE_TWITTER:
-            indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-            break;
-        case SERVICE_WASSR:
-            indexPath = [NSIndexPath indexPathForRow:1 inSection:0];
-            break;
-        default:
-            break;
-        }
-        [self.tableView cellForRowAtIndexPath:indexPath].detailTextLabel.text = screen_name;
-    }];
+                                                  usingBlock:^(NSNotification *notification) { [self.tableView reloadData]; }];
 }
 
 /*
@@ -105,7 +90,8 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellIdentifier] autorelease];
     }
-    
+
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     // Configure the cell...
     switch (indexPath.section) {
     case 0:
@@ -113,9 +99,11 @@
         switch (indexPath.row) {
         case 0:
             cell.textLabel.text = NSLocalizedString(@"Twitter", nil);
+            cell.detailTextLabel.text = [defaults stringForKey:USERDEFAULTS_TWITTER_USERNAME];
             break;
         case 1:
             cell.textLabel.text = NSLocalizedString(@"Wassr", nil);
+            cell.detailTextLabel.text = [defaults stringForKey:USERDEFAULTS_WASSR_USERNAME];
             break;
         default:
             break;

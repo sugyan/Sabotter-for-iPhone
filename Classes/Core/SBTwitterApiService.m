@@ -33,13 +33,16 @@
     void (^onSuccess)(NSData *) = ^(NSData *data) {
         LOG_CURRENT_METHOD;
         LOG(@"success");
-        // NSDictionary *result = [NSURL ab_parseURLQueryString:[[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease]];
-        [[NSNotificationCenter defaultCenter]
-                postNotificationName:NOTIFICATION_AUTHENTICATED
-                              object:self
-                            userInfo:[NSDictionary dictionaryWithObjectsAndKeys:username, @"screen_name",
-                                                   [NSNumber numberWithInt:SERVICE_TWITTER], @"service",
-                                                   nil]];
+        NSDictionary *result = [NSURL ab_parseURLQueryString:[[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease]];
+        // Store ... plistに書き込まれるまで遅延あり？ simulatorだけだろうか
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:username forKey:USERDEFAULTS_TWITTER_USERNAME];
+        [defaults setObject:[result objectForKey:@"oauth_token"]        forKey:USERDEFAULTS_TWITTER_ACCESS_TOKEN];
+        [defaults setObject:[result objectForKey:@"oauth_token_secret"] forKey:USERDEFAULTS_TWITTER_ACCESS_TOKEN_SECRET];
+        // Notify
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_AUTHENTICATED
+                                                            object:self
+                                                          userInfo:nil];
         callback(YES);
     };
     void (^onError)(NSError *) = ^(NSError *error) {

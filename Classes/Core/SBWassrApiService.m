@@ -24,12 +24,14 @@
         LOG_CURRENT_METHOD;
         LOG(@"success");
         // NSArray *result = [[[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease] JSONValue];
-        [[NSNotificationCenter defaultCenter]
-                postNotificationName:NOTIFICATION_AUTHENTICATED
-                              object:self
-                            userInfo:[NSDictionary dictionaryWithObjectsAndKeys:username, @"screen_name",
-                                                   [NSNumber numberWithInt:SERVICE_WASSR], @"service",
-                                                   nil]];
+        // Store ... plistに書き込まれるまで遅延あり？ simulatorだけだろうか
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:username forKey:USERDEFAULTS_WASSR_USERNAME];
+        [defaults setObject:password forKey:USERDEFAULTS_WASSR_PASSWORD];
+        // Notify
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_AUTHENTICATED
+                                                            object:self
+                                                          userInfo:nil];
         callback(YES);
     };
     void (^onError)(NSError *) = ^(NSError *error) {
