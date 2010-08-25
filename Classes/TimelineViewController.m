@@ -10,6 +10,7 @@
 
 @implementation TimelineViewController
 
+@synthesize statuses;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -57,13 +58,13 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 3;
+    return 1;
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 3;
+    return [self.statuses count];
 }
 
 
@@ -78,6 +79,8 @@
     }
     
     // Configure the cell...
+    NSDictionary *data = [self.statuses objectAtIndex:indexPath.row];
+    cell.textLabel.text = [data objectForKey:@"text"];
     
     return cell;
 }

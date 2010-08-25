@@ -9,7 +9,9 @@
 
 
 @interface TimelineViewController : UITableViewController {
-
+    NSArray *statuses;
 }
+
+@property (nonatomic, retain) NSArray *statuses;
 
 @end

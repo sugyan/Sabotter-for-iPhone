@@ -7,7 +7,6 @@
 
 #import "SBWassrApiService.h"
 #import "HttpClient.h"
-#import "JSON.h"
 #import "NSData+Base64.h"
 
 
@@ -23,7 +22,6 @@
     void (^onSuccess)(NSData *) = ^(NSData *data) {
         LOG_CURRENT_METHOD;
         LOG(@"success");
-        // NSArray *result = [[[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease] JSONValue];
         // Store ... plistに書き込まれるまで遅延あり？ simulatorだけだろうか
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setObject:username forKey:USERDEFAULTS_WASSR_USERNAME];

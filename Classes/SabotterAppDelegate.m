@@ -8,6 +8,9 @@
 #import "SabotterAppDelegate.h"
 #import "ConfigRootViewController.h"
 #import "TimelineViewController.h"
+#import "JSON.h"
+#import "NSData+Base64.h"
+#import "Common.h"
 
 
 @implementation SabotterAppDelegate
@@ -36,6 +39,28 @@
     [nav1 pushViewController:tvc1 animated:NO];
     nav1.navigationBar.topItem.leftBarButtonItem = configButton;
 
+    // TODO どこで処理を行う？
+    dispatch_queue_t q = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(q, ^{
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSURL *url = [NSURL URLWithString:@"http://api.wassr.jp/statuses/friends_timeline.json"];
+        NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url];
+        NSString *base64 = [[[NSString stringWithFormat:@"%@:%@",
+                                 [defaults stringForKey:USERDEFAULTS_WASSR_USERNAME],
+                                 [defaults stringForKey:USERDEFAULTS_WASSR_PASSWORD]] dataUsingEncoding:NSUTF8StringEncoding] base64EncodedString];
+        [req setValue:[NSString stringWithFormat:@"Basic %@", base64] forHTTPHeaderField:@"Authorization"];
+        NSURLResponse *res = nil;
+        NSError       *err = nil;
+        NSData *data = [NSURLConnection sendSynchronousRequest:req returningResponse:&res error:&err];
+        if (err) {
+            LOG(@"error: %@", err);
+        }
+        NSArray *timeline = [[[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease] JSONValue];
+        tvc0.statuses = timeline;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [tvc0.tableView reloadData];
+        });
+    });
     return YES;
 }
 
