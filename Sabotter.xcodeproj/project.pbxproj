@@ -25,6 +25,9 @@
 		9E120C831206B1C600ACB990 /* ConfigRootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E120C821206B1C600ACB990 /* ConfigRootView.xib */; };
 		9E120CA71206B8AA00ACB990 /* ConfigAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E120CA51206B8AA00ACB990 /* ConfigAccountViewController.m */; };
 		9E120CB61206B8D500ACB990 /* ConfigAccountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E120CB51206B8D500ACB990 /* ConfigAccountView.xib */; };
+		9E13002B122C6877001758C5 /* StatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E13002A122C6877001758C5 /* StatusCell.xib */; };
+		9E13003D122C6DA3001758C5 /* StatusCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E13003B122C6DA3001758C5 /* StatusCellViewController.m */; };
+		9E130056122C6DD7001758C5 /* StatusCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E130055122C6DD7001758C5 /* StatusCellView.xib */; };
 		9E169355121A05A6005E389C /* SBApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E169354121A05A6005E389C /* SBApi.m */; };
 		9E16936C121A0B26005E389C /* SBWassrApiService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E16936B121A0B26005E389C /* SBWassrApiService.m */; };
 		9E3836D4121DF9040097E331 /* SBTwitterApiService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3836D3121DF9040097E331 /* SBTwitterApiService.m */; };
@@ -34,6 +37,7 @@
 		9E3990A7121C4797009170DF /* OAuth+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3990A3121C4797009170DF /* OAuth+Additions.m */; };
 		9E3990A8121C4797009170DF /* OAuthCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3990A5121C4797009170DF /* OAuthCore.m */; };
 		9E4E5B391217E8200074B124 /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4E5B381217E8200074B124 /* HttpClient.m */; };
+		9E5D45961224A105006325B6 /* StatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5D45951224A105006325B6 /* StatusCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +72,10 @@
 		9E120CA41206B8AA00ACB990 /* ConfigAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigAccountViewController.h; sourceTree = "<group>"; };
 		9E120CA51206B8AA00ACB990 /* ConfigAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigAccountViewController.m; sourceTree = "<group>"; };
 		9E120CB51206B8D500ACB990 /* ConfigAccountView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ConfigAccountView.xib; path = xib/ConfigAccountView.xib; sourceTree = "<group>"; };
+		9E13002A122C6877001758C5 /* StatusCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = StatusCell.xib; path = xib/StatusCell.xib; sourceTree = "<group>"; };
+		9E13003A122C6DA3001758C5 /* StatusCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusCellViewController.h; sourceTree = "<group>"; };
+		9E13003B122C6DA3001758C5 /* StatusCellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusCellViewController.m; sourceTree = "<group>"; };
+		9E130055122C6DD7001758C5 /* StatusCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = StatusCellView.xib; path = xib/StatusCellView.xib; sourceTree = "<group>"; };
 		9E1693011219A5E0005E389C /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		9E169353121A05A6005E389C /* SBApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBApi.h; path = Core/SBApi.h; sourceTree = "<group>"; };
 		9E169354121A05A6005E389C /* SBApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBApi.m; path = Core/SBApi.m; sourceTree = "<group>"; };
@@ -86,6 +94,8 @@
 		9E3990A5121C4797009170DF /* OAuthCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OAuthCore.m; path = oauthcore/OAuthCore.m; sourceTree = "<group>"; };
 		9E4E5B371217E8200074B124 /* HttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HttpClient.h; path = Util/HttpClient.h; sourceTree = "<group>"; };
 		9E4E5B381217E8200074B124 /* HttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HttpClient.m; path = Util/HttpClient.m; sourceTree = "<group>"; };
+		9E5D45941224A105006325B6 /* StatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StatusCell.h; path = Classes/StatusCell.h; sourceTree = "<group>"; };
+		9E5D45951224A105006325B6 /* StatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StatusCell.m; path = Classes/StatusCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +115,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				9E13003A122C6DA3001758C5 /* StatusCellViewController.h */,
+				9E13003B122C6DA3001758C5 /* StatusCellViewController.m */,
 				9E39909E121C475F009170DF /* oauthcore */,
 				9E033CD0121EFB8300B171A4 /* json-framework */,
 				9E1693011219A5E0005E389C /* Common.h */,
@@ -151,6 +163,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9E5D45941224A105006325B6 /* StatusCell.h */,
+				9E5D45951224A105006325B6 /* StatusCell.m */,
 				9E3836F6121E03BA0097E331 /* config.plist */,
 				9E120C2F12055CA600ACB990 /* image */,
 				9E120B9F1204484B00ACB990 /* xib */,
@@ -190,6 +204,8 @@
 		9E120B9F1204484B00ACB990 /* xib */ = {
 			isa = PBXGroup;
 			children = (
+				9E130055122C6DD7001758C5 /* StatusCellView.xib */,
+				9E13002A122C6877001758C5 /* StatusCell.xib */,
 				9E120CB51206B8D500ACB990 /* ConfigAccountView.xib */,
 				9E120C821206B1C600ACB990 /* ConfigRootView.xib */,
 				9E120BA01204485D00ACB990 /* TimelineView.xib */,
@@ -302,6 +318,8 @@
 				9E120C831206B1C600ACB990 /* ConfigRootView.xib in Resources */,
 				9E120CB61206B8D500ACB990 /* ConfigAccountView.xib in Resources */,
 				9E3836F7121E03BA0097E331 /* config.plist in Resources */,
+				9E13002B122C6877001758C5 /* StatusCell.xib in Resources */,
+				9E130056122C6DD7001758C5 /* StatusCellView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +348,8 @@
 				9E033CDE121EFB9C00B171A4 /* SBJsonBase.m in Sources */,
 				9E033CDF121EFB9C00B171A4 /* SBJsonParser.m in Sources */,
 				9E033CE0121EFB9C00B171A4 /* SBJsonWriter.m in Sources */,
+				9E5D45961224A105006325B6 /* StatusCell.m in Sources */,
+				9E13003D122C6DA3001758C5 /* StatusCellViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

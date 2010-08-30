@@ -6,6 +6,8 @@
 //
 
 #import "TimelineViewController.h"
+#import "StatusCell.h"
+#import "StatusCellViewController.h"
 
 
 @implementation TimelineViewController
@@ -15,14 +17,11 @@
 #pragma mark -
 #pragma mark View lifecycle
 
-/*
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.tableView.rowHeight = 100.0;
 }
-*/
 
 /*
 - (void)viewWillAppear:(BOOL)animated {
@@ -70,17 +69,16 @@
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    StatusCell *cell = (StatusCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        StatusCellViewController *scvc = [[[StatusCellViewController alloc] initWithNibName:@"StatusCell" bundle:nil] autorelease];
+        cell = (StatusCell *)scvc.view;
     }
     
-    // Configure the cell...
     NSDictionary *data = [self.statuses objectAtIndex:indexPath.row];
-    cell.textLabel.text = [data objectForKey:@"text"];
+    cell.statusTextLabel.text = [data objectForKey:@"text"];
     
     return cell;
 }
