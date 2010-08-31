@@ -11,8 +11,10 @@
 @interface StatusCell : UITableViewCell {
     IBOutlet UIView *view;
     IBOutlet UILabel *statusTextLabel;
+    IBOutlet UILabel *usernameLabel;
 }
 
 @property (nonatomic, retain) UILabel *statusTextLabel;
+@property (nonatomic, retain) UILabel *usernameLabel;
 
 @end

@@ -8,6 +8,7 @@
 #import "SabotterAppDelegate.h"
 #import "ConfigRootViewController.h"
 #import "TimelineViewController.h"
+#import "SBStatus.h"
 #import "JSON.h"
 #import "NSData+Base64.h"
 #import "Common.h"
@@ -56,7 +57,16 @@
             LOG(@"error: %@", err);
         }
         NSArray *timeline = [[[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease] JSONValue];
-        tvc0.statuses = timeline;
+        NSMutableArray *statuses = [NSMutableArray arrayWithCapacity:20];
+        for (NSDictionary *dict in timeline) {
+            SBStatus *status = [[[SBStatus alloc] init] autorelease];
+            status.text = [dict objectForKey:@"text"];
+            status.user = [NSString stringWithFormat:@"%@(%@)",
+                                 [[dict objectForKey:@"user"] objectForKey:@"screen_name"],
+                                  [dict objectForKey:@"user_login_id"]];
+            [statuses addObject:status];
+        }
+        tvc0.statuses = statuses;
         dispatch_async(dispatch_get_main_queue(), ^{
             [tvc0.tableView reloadData];
         });

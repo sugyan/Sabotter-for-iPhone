@@ -8,6 +8,7 @@
 #import "TimelineViewController.h"
 #import "StatusCell.h"
 #import "StatusCellViewController.h"
+#import "SBStatus.h"
 
 
 @implementation TimelineViewController
@@ -77,8 +78,9 @@
         cell = (StatusCell *)scvc.view;
     }
     
-    NSDictionary *data = [self.statuses objectAtIndex:indexPath.row];
-    cell.statusTextLabel.text = [data objectForKey:@"text"];
+    SBStatus *status = [self.statuses objectAtIndex:indexPath.row];
+    cell.statusTextLabel.text = status.text;
+    cell.usernameLabel.text   = status.user;
     
     return cell;
 }

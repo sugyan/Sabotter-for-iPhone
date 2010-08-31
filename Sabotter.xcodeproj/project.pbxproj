@@ -38,6 +38,7 @@
 		9E3990A8121C4797009170DF /* OAuthCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3990A5121C4797009170DF /* OAuthCore.m */; };
 		9E4E5B391217E8200074B124 /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4E5B381217E8200074B124 /* HttpClient.m */; };
 		9E5D45961224A105006325B6 /* StatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5D45951224A105006325B6 /* StatusCell.m */; };
+		9EDEEE50122C7A420070ECC3 /* SBStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EDEEE4F122C7A420070ECC3 /* SBStatus.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,8 +95,10 @@
 		9E3990A5121C4797009170DF /* OAuthCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OAuthCore.m; path = oauthcore/OAuthCore.m; sourceTree = "<group>"; };
 		9E4E5B371217E8200074B124 /* HttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HttpClient.h; path = Util/HttpClient.h; sourceTree = "<group>"; };
 		9E4E5B381217E8200074B124 /* HttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HttpClient.m; path = Util/HttpClient.m; sourceTree = "<group>"; };
-		9E5D45941224A105006325B6 /* StatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StatusCell.h; path = Classes/StatusCell.h; sourceTree = "<group>"; };
-		9E5D45951224A105006325B6 /* StatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StatusCell.m; path = Classes/StatusCell.m; sourceTree = "<group>"; };
+		9E5D45941224A105006325B6 /* StatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusCell.h; sourceTree = "<group>"; };
+		9E5D45951224A105006325B6 /* StatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusCell.m; sourceTree = "<group>"; };
+		9EDEEE4E122C7A420070ECC3 /* SBStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBStatus.h; path = Core/SBStatus.h; sourceTree = "<group>"; };
+		9EDEEE4F122C7A420070ECC3 /* SBStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBStatus.m; path = Core/SBStatus.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,8 @@
 			children = (
 				9E13003A122C6DA3001758C5 /* StatusCellViewController.h */,
 				9E13003B122C6DA3001758C5 /* StatusCellViewController.m */,
+				9E5D45941224A105006325B6 /* StatusCell.h */,
+				9E5D45951224A105006325B6 /* StatusCell.m */,
 				9E39909E121C475F009170DF /* oauthcore */,
 				9E033CD0121EFB8300B171A4 /* json-framework */,
 				9E1693011219A5E0005E389C /* Common.h */,
@@ -163,8 +168,6 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9E5D45941224A105006325B6 /* StatusCell.h */,
-				9E5D45951224A105006325B6 /* StatusCell.m */,
 				9E3836F6121E03BA0097E331 /* config.plist */,
 				9E120C2F12055CA600ACB990 /* image */,
 				9E120B9F1204484B00ACB990 /* xib */,
@@ -244,6 +247,8 @@
 				9E169354121A05A6005E389C /* SBApi.m */,
 				9E3836E3121DFC840097E331 /* SBConfig.h */,
 				9E3836E4121DFC840097E331 /* SBConfig.m */,
+				9EDEEE4E122C7A420070ECC3 /* SBStatus.h */,
+				9EDEEE4F122C7A420070ECC3 /* SBStatus.m */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -350,6 +355,7 @@
 				9E033CE0121EFB9C00B171A4 /* SBJsonWriter.m in Sources */,
 				9E5D45961224A105006325B6 /* StatusCell.m in Sources */,
 				9E13003D122C6DA3001758C5 /* StatusCellViewController.m in Sources */,
+				9EDEEE50122C7A420070ECC3 /* SBStatus.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
