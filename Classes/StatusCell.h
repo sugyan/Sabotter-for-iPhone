@@ -10,11 +10,13 @@
 
 @interface StatusCell : UITableViewCell {
     IBOutlet UIView *view;
+    IBOutlet UIImageView *iconView;
     IBOutlet UILabel *statusTextLabel;
     IBOutlet UILabel *usernameLabel;
     IBOutlet UILabel *infoLabel;
 }
 
+@property (nonatomic, retain) UIImageView *iconView;
 @property (nonatomic, retain) UILabel *statusTextLabel;
 @property (nonatomic, retain) UILabel *usernameLabel;
 @property (nonatomic, retain) UILabel *infoLabel;

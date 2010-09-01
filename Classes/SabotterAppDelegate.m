@@ -60,11 +60,13 @@
         NSMutableArray *statuses = [NSMutableArray arrayWithCapacity:20];
         for (NSDictionary *dict in timeline) {
             SBStatus *status = [[[SBStatus alloc] init] autorelease];
+            NSDictionary *userDict = [dict objectForKey:@"user"];
             status.text = [dict objectForKey:@"text"];
             status.user = [NSString stringWithFormat:@"%@(%@)",
-                                 [[dict objectForKey:@"user"] objectForKey:@"screen_name"],
+                              [userDict objectForKey:@"screen_name"],
                                   [dict objectForKey:@"user_login_id"]];
             status.date = [NSDate dateWithTimeIntervalSince1970:[[dict objectForKey:@"epoch"] doubleValue]];
+            status.iconUrl = [userDict objectForKey:@"profile_image_url"];
             [statuses addObject:status];
         }
         tvc0.statuses = statuses;

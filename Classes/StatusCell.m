@@ -10,6 +10,7 @@
 
 @implementation StatusCell
 
+@synthesize iconView;
 @synthesize statusTextLabel;
 @synthesize usernameLabel;
 @synthesize infoLabel;

@@ -83,6 +83,15 @@
     cell.statusTextLabel.text = status.text;
     cell.usernameLabel.text   = status.user;
     cell.infoLabel.text       = [status.date description];
+    if (status.iconImage) {
+        cell.iconView.image = status.iconImage;
+    } else {
+        [status getImageWithCallback:^{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [tableView reloadData];
+            });
+        }];
+    }
     
     return cell;
 }
