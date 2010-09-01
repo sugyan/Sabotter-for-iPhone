@@ -12,5 +12,6 @@
 
 @synthesize text;
 @synthesize user;
+@synthesize date;
 
 @end

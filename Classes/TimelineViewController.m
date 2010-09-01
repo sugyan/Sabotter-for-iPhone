@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.tableView.rowHeight = 100.0;
+    self.tableView.rowHeight = 84.0f;
 }
 
 /*
@@ -76,11 +76,13 @@
     if (cell == nil) {
         StatusCellViewController *scvc = [[[StatusCellViewController alloc] initWithNibName:@"StatusCell" bundle:nil] autorelease];
         cell = (StatusCell *)scvc.view;
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
     SBStatus *status = [self.statuses objectAtIndex:indexPath.row];
     cell.statusTextLabel.text = status.text;
     cell.usernameLabel.text   = status.user;
+    cell.infoLabel.text       = [status.date description];
     
     return cell;
 }

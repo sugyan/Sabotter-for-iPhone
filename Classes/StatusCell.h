@@ -12,9 +12,11 @@
     IBOutlet UIView *view;
     IBOutlet UILabel *statusTextLabel;
     IBOutlet UILabel *usernameLabel;
+    IBOutlet UILabel *infoLabel;
 }
 
 @property (nonatomic, retain) UILabel *statusTextLabel;
 @property (nonatomic, retain) UILabel *usernameLabel;
+@property (nonatomic, retain) UILabel *infoLabel;
 
 @end

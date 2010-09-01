@@ -11,9 +11,11 @@
 @interface SBStatus : NSObject {
     NSString *text;
     NSString *user;
+    NSDate   *date;
 }
 
 @property (nonatomic, retain) NSString *text;
 @property (nonatomic, retain) NSString *user;
+@property (nonatomic, retain) NSDate   *date;
 
 @end

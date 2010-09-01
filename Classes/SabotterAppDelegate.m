@@ -64,6 +64,7 @@
             status.user = [NSString stringWithFormat:@"%@(%@)",
                                  [[dict objectForKey:@"user"] objectForKey:@"screen_name"],
                                   [dict objectForKey:@"user_login_id"]];
+            status.date = [NSDate dateWithTimeIntervalSince1970:[[dict objectForKey:@"epoch"] doubleValue]];
             [statuses addObject:status];
         }
         tvc0.statuses = statuses;
